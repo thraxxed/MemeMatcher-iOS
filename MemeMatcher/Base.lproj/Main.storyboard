@@ -80,6 +80,7 @@
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="fzX-80-bxG" appends="YES" id="QkR-FQ-vV1"/>
+                                            <outletCollection property="gestureRecognizers" destination="5fY-9Q-rvi" appends="YES" id="eKb-22-Tse"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -122,6 +123,11 @@
                 <swipeGestureRecognizer direction="right" id="fzX-80-bxG">
                     <connections>
                         <action selector="swipeRight:" destination="8rJ-Kc-sve" id="1XG-EB-7d9"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="5fY-9Q-rvi">
+                    <connections>
+                        <action selector="swipeLeft:" destination="8rJ-Kc-sve" id="Vjp-c2-O0l"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

@@ -123,6 +123,23 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        print("we went left")
+        memeIndex += 1
+        if (memeIndex >= self.memes.count) {
+            return
+        }
+        let url = URL(string: self.memes[self.memeIndex].image_url)
+        
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            DispatchQueue.main.async {
+                self.memeImage.image = UIImage(data: data!)
+            }
+        }
+    }
+    
+    
     
     
     // Functions to download images after API call
