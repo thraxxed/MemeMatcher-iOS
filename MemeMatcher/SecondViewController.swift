@@ -105,10 +105,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         task.resume()
     }
     
-    //Mark: Actions
-    
-    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        print("bbbbb")
+    func loadMemeImage() {
         memeIndex += 1
         if (memeIndex >= self.memes.count) {
             return
@@ -123,53 +120,27 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    //Mark: Actions
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        print("we swiped right")
+        loadMemeImage()
+    }
+    
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
-        print("we went left")
-        memeIndex += 1
-        if (memeIndex >= self.memes.count) {
-            return
-        }
-        let url = URL(string: self.memes[self.memeIndex].image_url)
-        
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                self.memeImage.image = UIImage(data: data!)
-            }
-        }
+        print("we swiped left")
+        loadMemeImage()
     }
     
     
     @IBAction func heartMeme(_ sender: UIButton) {
         print("we clicked heart")
-        memeIndex += 1
-        if (memeIndex >= self.memes.count) {
-            return
-        }
-        let url = URL(string: self.memes[self.memeIndex].image_url)
-        
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                self.memeImage.image = UIImage(data: data!)
-            }
-        }
+        loadMemeImage()
     }
     
     @IBAction func dislikeMeme(_ sender: UIButton) {
         print("we clicked x")
-        memeIndex += 1
-        if (memeIndex >= self.memes.count) {
-            return
-        }
-        let url = URL(string: self.memes[self.memeIndex].image_url)
-        
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                self.memeImage.image = UIImage(data: data!)
-            }
-        }
+        loadMemeImage()
     }
     
     
