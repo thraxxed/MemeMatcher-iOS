@@ -9,6 +9,10 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    @IBOutlet weak var memeImage: UIImageView!
+    
+    
     var memes = [Meme]()
     
     override func viewDidLoad() {
@@ -18,7 +22,9 @@ class SecondViewController: UIViewController {
             switch result {
             case .success(let memes):
                 self.memes = memes
+                print(self.memes)
             case .failure(let error):
+                print(error )
                 fatalError("error: \(error.localizedDescription)")
             }
         }
