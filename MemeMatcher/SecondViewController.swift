@@ -10,6 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    // MARK: Properties
     @IBOutlet weak var memeImage: UIImageView!
     
     
@@ -23,6 +24,10 @@ class SecondViewController: UIViewController {
             case .success(let memes):
                 self.memes = memes
                 print(self.memes)
+                let url = URL(string: self.memes[0].image_url)
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                self.memeImage.image = UIImage(data: data!)
+
             case .failure(let error):
                 print(error )
                 fatalError("error: \(error.localizedDescription)")
@@ -91,41 +96,61 @@ class SecondViewController: UIViewController {
         task.resume()
     }
     
+//
+//    func getDocumentsURL() -> URL {
+//        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+//            return url
+//        } else {
+//            fatalError("Could not retrieve documents directory")
+//        }
+//    }
+//
+//    func savePostsToDisk(memes: [Meme]) {
+//        // 1. Create a URL for documents-directory/posts.json
+//        let url = getDocumentsURL().appendingPathComponent("memes.json")
+//        // 2. Endcode our [Post] data to JSON Data
+//        let encoder = JSONEncoder()
+//        do {
+//            let data = try encoder.encode(memes)
+//            // 3. Write this data to the url specified in step 1
+//            try data.write(to: url, options: [])
+//        } catch {
+//            fatalError(error.localizedDescription)
+//        }
+//    }
+//
+//    func getPostsFromDisk() -> [Meme] {
+//        // 1. Create a url for documents-directory/posts.json
+//        let url = getDocumentsURL().appendingPathComponent("memes.json")
+//        let decoder = JSONDecoder()
+//        do {
+//            // 2. Retrieve the data on the file in this path (if there is any)
+//            let data = try Data(contentsOf: url, options: [])
+//            // 3. Decode an array of Posts from this Data
+//            let memes = try decoder.decode([Meme].self, from: data)
+//            return memes
+//        } catch {
+//            fatalError(error.localizedDescription)
+//        }
+//    }
     
-    func getDocumentsURL() -> URL {
-        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            return url
-        } else {
-            fatalError("Could not retrieve documents directory")
-        }
+    
+    //Mark: Actions
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
     }
     
-    func savePostsToDisk(memes: [Meme]) {
-        // 1. Create a URL for documents-directory/posts.json
-        let url = getDocumentsURL().appendingPathComponent("memes.json")
-        // 2. Endcode our [Post] data to JSON Data
-        let encoder = JSONEncoder()
-        do {
-            let data = try encoder.encode(memes)
-            // 3. Write this data to the url specified in step 1
-            try data.write(to: url, options: [])
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
-    func getPostsFromDisk() -> [Meme] {
-        // 1. Create a url for documents-directory/posts.json
-        let url = getDocumentsURL().appendingPathComponent("memes.json")
-        let decoder = JSONDecoder()
-        do {
-            // 2. Retrieve the data on the file in this path (if there is any)
-            let data = try Data(contentsOf: url, options: [])
-            // 3. Decode an array of Posts from this Data
-            let memes = try decoder.decode([Meme].self, from: data)
-            return memes
-        } catch {
-            fatalError(error.localizedDescription)
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.memeImage.image = UIImage(data: data)
+            }
         }
     }
 }
