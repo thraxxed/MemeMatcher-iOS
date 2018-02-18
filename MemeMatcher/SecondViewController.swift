@@ -21,10 +21,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: Selector(("respondToSwipeGesture:")))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        self.view.addGestureRecognizer(swipeRight)
-        
         // Do any additional setup after loading the view, typically from a nib.
         getMemes(for: 1) { (result) in
             switch result {
@@ -91,11 +87,11 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
                     let decoder = JSONDecoder()
                     
                     do {
-                        // We would use Post.self for JSON representing a single Post
-                        // object, and [Post].self for JSON representing an array of
-                        // Post objects
-                        let posts = try decoder.decode([Meme].self, from: jsonData)
-                        completion?(.success(posts))
+                        // We would use Meme.self for JSON representing a single Meme
+                        // object, and [Meme].self for JSON representing an array of
+                        // Meme objects
+                        let memes = try decoder.decode([Meme].self, from: jsonData)
+                        completion?(.success(memes))
                     } catch {
                         completion?(.failure(error))
                     }
@@ -125,8 +121,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
                 self.memeImage.image = UIImage(data: data!)
             }
         }
-//        print(gestureRecognizer.state)
-//        if gestureRecognizer.state == .ended
     }
     
     
