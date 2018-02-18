@@ -89,11 +89,17 @@
                                 <rect key="frame" x="265" y="555" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt;3"/>
+                                <connections>
+                                    <action selector="heartMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DGr-Wd-AT3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-aa-bZl">
                                 <rect key="frame" x="80" y="555" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="dislikeMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wqN-zr-Ncb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
