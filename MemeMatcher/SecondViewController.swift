@@ -114,6 +114,9 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         print("bbbbb")
         memeIndex += 1
+        if (memeIndex >= self.memes.count) {
+            return
+        }
         let url = URL(string: self.memes[self.memeIndex].image_url)
         
         DispatchQueue.global().async {
