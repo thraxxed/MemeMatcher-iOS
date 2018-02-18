@@ -10,13 +10,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMatcher/SecondViewController.swift"
-            timestampString = "540623720.426751"
+            timestampString = "540627050.989822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMatcher/SecondViewController.swift"
+            timestampString = "540627050.991343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.SecondViewController.__deallocating_deinit"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyunchu/Documents/App%20Academy/flexproject/memematcherios/MemeMatcher/SecondViewController.swift"
+                  timestampString = "540626492.668077"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.SecondViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MemeMatcher.SecondViewController"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyunchu/Documents/App%20Academy/flexproject/memematcherios/MemeMatcher/SecondViewController.swift"
+                  timestampString = "540626492.671435"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.SecondViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MemeMatcher.SecondViewController"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyunchu/Documents/App%20Academy/flexproject/memematcherios/MemeMatcher/SecondViewController.swift"
+                  timestampString = "540626492.675378"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.SecondViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MemeMatcher.SecondViewController&gt;"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyunchu/Documents/App%20Academy/flexproject/memematcherios/MemeMatcher/SecondViewController.swift"
+                  timestampString = "540626492.679962"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.SecondViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MemeMatcher.SecondViewController&gt;"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyunchu/Documents/App%20Academy/flexproject/memematcherios/MemeMatcher/SecondViewController.swift"
+                  timestampString = "540626492.683602"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
