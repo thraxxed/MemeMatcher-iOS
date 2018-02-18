@@ -24,9 +24,15 @@ class SecondViewController: UIViewController {
             case .success(let memes):
                 self.memes = memes
                 print(self.memes)
+                
                 let url = URL(string: self.memes[0].image_url)
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                self.memeImage.image = UIImage(data: data!)
+                
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    DispatchQueue.main.async {
+                        self.memeImage.image = UIImage(data: data!)
+                    }
+                }
 
             case .failure(let error):
                 print(error )
