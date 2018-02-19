@@ -13,13 +13,15 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: Properties
     @IBOutlet weak var memeImage: UIImageView!
     
-    
     var memes = [Meme]()
     
     var memeIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("BBB")
+        print(MemeMatcher.currentUser.username)
         
         // Do any additional setup after loading the view, typically from a nib.
         getMemes(for: 1) { (result) in

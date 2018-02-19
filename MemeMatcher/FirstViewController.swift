@@ -8,6 +8,20 @@
 
 import UIKit
 
+class User {
+    var id: Int
+    var username: String
+    var picture_url: String
+    init(id: Int, username: String, picture_url: String) {
+        self.id = id
+        self.username = username
+        self.picture_url = picture_url
+    }
+}
+
+let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "")
+var currentUser: User = nullUser
+
 class FirstViewController: UIViewController {
 
     //MARK: Properties
@@ -72,11 +86,22 @@ class FirstViewController: UIViewController {
             // APIs usually respond with the data you just sent in your POST request
             if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
                 print("response: ", utf8Representation)
-                let currentUser = try? JSONSerialization.jsonObject(with: data)
-                if ((currentUser! as AnyObject)["username"] == nil) {
+                let currentUserJSON = try? JSONSerialization.jsonObject(with: data)
+                if ((currentUserJSON! as AnyObject)["username"] == nil) {
                     return
                 }
-                print((currentUser! as AnyObject)["username"]!!)
+            
+                let username = (currentUserJSON! as AnyObject)["username"]!!
+                let id = (currentUserJSON! as AnyObject)["id"]!!
+                let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
+                
+                let username2 = username as! String
+                let id2 = id as! Int
+                let picture_url2 = picture_url as! String
+                
+                MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2)
+                
+                print((currentUserJSON! as AnyObject)["username"]!!)
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignUp", sender: self)
                 }
@@ -87,17 +112,6 @@ class FirstViewController: UIViewController {
         
         task.resume()
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-//    {
-//        if segue.destination is SecondViewController
-//        {
-//            let vc = segue.destination as? SecondViewController
-//            vc?.username = (currentUser! as AnyObject)["username"]!!
-//        }
-//    }
-
-    //MARK: Action
     
     @IBAction func createAccountTap(_ sender: UITapGestureRecognizer) {
         let myUser = User(username: signupNameTextField.text!, password: signupPasswordTextField.text!)
