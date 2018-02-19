@@ -57,6 +57,12 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         let image_url: String
     }
     
+    struct Like: Codable {
+        let meme_id: Int
+        let user_id: Int
+        let liked: Bool
+    }
+    
     
     enum Result<Value> {
         case success(Value)
@@ -96,6 +102,69 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         task.resume()
+    }
+    
+    func likeMeme(like: Like, completion:((Error?) -> Void)?){
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "meme-matcher.herokuapp.com"
+        urlComponents.path = "/api/likes"
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        
+        let encoder = JSONEncoder()
+        do {
+            let jsonData = try encoder.encode(like)
+            request.httpBody = jsonData
+            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+        } catch {
+            completion?(error)
+        }
+        
+        // Create and run a URLSession data task with our JSON encoded POST request
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+            guard responseError == nil else {
+                completion?(responseError!)
+                return
+            }
+            
+            // APIs usually respond with the data you just sent in your POST request
+            if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
+                print("response: ", utf8Representation)
+                
+                let currentUserJSON = try? JSONSerialization.jsonObject(with: data)
+                if ((currentUserJSON! as AnyObject)["username"] == nil) {
+                    return
+                }
+                let username = (currentUserJSON! as AnyObject)["username"]!!
+                let id = (currentUserJSON! as AnyObject)["id"]!!
+                let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
+                
+                let username2 = username as! String
+                let id2 = id as! Int
+                let picture_url2 = picture_url as! String
+                
+                MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2)
+                
+                DispatchQueue.main.async(){
+                    self.performSegue(withIdentifier: "successfulSignUp", sender: self)
+                }
+            } else {
+                print("no readable data received in response")
+            }
+        }
+        
+        task.resume()
+        
     }
     
     func loadMemeImage() {
