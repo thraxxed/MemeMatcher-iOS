@@ -116,6 +116,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         print("we swiped right")
         loadMemeImage()
+        
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {

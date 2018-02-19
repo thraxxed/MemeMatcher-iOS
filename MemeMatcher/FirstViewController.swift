@@ -9,7 +9,7 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-    
+
     //MARK: Properties
     
     @IBOutlet weak var signupNameTextField: UITextField!
@@ -88,6 +88,14 @@ class FirstViewController: UIViewController {
         task.resume()
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//    {
+//        if segue.destination is SecondViewController
+//        {
+//            let vc = segue.destination as? SecondViewController
+//            vc?.username = (currentUser! as AnyObject)["username"]!!
+//        }
+//    }
 
     //MARK: Action
     
