@@ -61,6 +61,13 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         let meme_id: Int
         let user_id: Int
         let liked: Bool
+        
+        init(meme_id: Int, user_id: Int, liked: Bool) {
+            self.meme_id = meme_id
+            self.user_id = user_id
+            self.liked = liked
+        }
+        
     }
     
     
@@ -137,30 +144,30 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
                 return
             }
             
-            // APIs usually respond with the data you just sent in your POST request
-            if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-                print("response: ", utf8Representation)
-                
-                let currentUserJSON = try? JSONSerialization.jsonObject(with: data)
-                if ((currentUserJSON! as AnyObject)["username"] == nil) {
-                    return
-                }
-                let username = (currentUserJSON! as AnyObject)["username"]!!
-                let id = (currentUserJSON! as AnyObject)["id"]!!
-                let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
-                
-                let username2 = username as! String
-                let id2 = id as! Int
-                let picture_url2 = picture_url as! String
-                
-                MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2)
-                
-                DispatchQueue.main.async(){
-                    self.performSegue(withIdentifier: "successfulSignUp", sender: self)
-                }
-            } else {
-                print("no readable data received in response")
-            }
+//            // APIs usually respond with the data you just sent in your POST request
+//            if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
+//                print("response: ", utf8Representation)
+//
+//                let currentUserJSON = try? JSONSerialization.jsonObject(with: data)
+//                if ((currentUserJSON! as AnyObject)["username"] == nil) {
+//                    return
+//                }
+//                let username = (currentUserJSON! as AnyObject)["username"]!!
+//                let id = (currentUserJSON! as AnyObject)["id"]!!
+//                let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
+//
+//                let username2 = username as! String
+//                let id2 = id as! Int
+//                let picture_url2 = picture_url as! String
+//
+//                MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2)
+//
+//                DispatchQueue.main.async(){
+//                    self.performSegue(withIdentifier: "successfulSignUp", sender: self)
+//                }
+//            } else {
+//                print("no readable data received in response")
+//            }
         }
         
         task.resume()
@@ -186,6 +193,16 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
         print("we swiped right")
+        
+        let postLike = Like(meme_id: self.memes[self.memeIndex].id,
+                            user_id: MemeMatcher.currentUser.id,
+                            liked: true)
+        likeMeme(like: postLike) { (error) in
+            if let error = error {
+             fatalError(error.localizedDescription)
+            }
+        }
+        
         loadMemeImage()
         
     }
