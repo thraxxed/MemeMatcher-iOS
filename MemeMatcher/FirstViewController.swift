@@ -72,6 +72,11 @@ class FirstViewController: UIViewController {
             // APIs usually respond with the data you just sent in your POST request
             if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
                 print("response: ", utf8Representation)
+                let currentUser = try? JSONSerialization.jsonObject(with: data)
+                if ((currentUser! as AnyObject)["username"] == nil) {
+                    return
+                }
+                print((currentUser! as AnyObject)["username"]!!)
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignUp", sender: self)
                 }
