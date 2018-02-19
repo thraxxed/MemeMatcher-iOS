@@ -20,7 +20,10 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("BBB")
+        memeImage.layer.borderWidth = 1.5
+        memeImage.layer.borderColor = UIColor.white.cgColor
+        
+        
         print(MemeMatcher.currentUser.username)
         
         // Do any additional setup after loading the view, typically from a nib.
