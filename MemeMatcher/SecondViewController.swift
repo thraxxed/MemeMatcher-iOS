@@ -12,6 +12,8 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Properties
     @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     
     var memes = [Meme]()
     
@@ -22,6 +24,10 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         
         memeImage.layer.borderWidth = 1.5
         memeImage.layer.borderColor = UIColor.white.cgColor
+        
+        dislikeButton.setImage(UIImage(named: "dislikeButton"), for: .normal)
+        
+        likeButton.setImage(UIImage(named: "likeButton"), for: .normal)
         
         
         print(MemeMatcher.currentUser.username)

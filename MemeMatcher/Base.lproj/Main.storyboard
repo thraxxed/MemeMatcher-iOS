@@ -126,7 +126,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OH-Pf-E9k">
                                 <rect key="frame" x="265" y="555" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="&lt;3"/>
                                 <connections>
                                     <action selector="heartMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DGr-Wd-AT3"/>
                                 </connections>
@@ -134,7 +133,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-aa-bZl">
                                 <rect key="frame" x="80" y="555" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="X"/>
                                 <connections>
                                     <action selector="dislikeMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wqN-zr-Ncb"/>
                                 </connections>
@@ -168,6 +166,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="dislikeButton" destination="Syn-aa-bZl" id="EFf-md-jrL"/>
+                        <outlet property="likeButton" destination="8OH-Pf-E9k" id="fEq-V7-RgR"/>
                         <outlet property="memeImage" destination="dDm-sO-G1A" id="jtW-Ru-yuo"/>
                     </connections>
                 </viewController>
@@ -183,7 +183,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="764" y="964"/>
+            <point key="canvasLocation" x="540" y="1013"/>
         </scene>
         <!--Item-->
         <scene sceneID="aKh-aK-6py">
