@@ -112,6 +112,11 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func likeMeme(like: Like, completion:((Error?) -> Void)?){
+//        memeIndex += 1
+        if (memeIndex == self.memes.count) {
+            print("sorry, your out of memes")
+            return
+        }
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "meme-matcher.herokuapp.com"
@@ -196,7 +201,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         print("we clicked x")
         sendLike(liked: false)
     }
-    
     
     // Functions to download images after API call
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
