@@ -14,6 +14,7 @@
 		5D35508920391A0A00CC21F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D35508820391A0A00CC21F1 /* Assets.xcassets */; };
 		5D35508C20391A0A00CC21F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D35508A20391A0A00CC21F1 /* LaunchScreen.storyboard */; };
 		5D35509720391A0A00CC21F1 /* MemeMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35509620391A0A00CC21F1 /* MemeMatcherTests.swift */; };
+		F904865C203A5C3B00FCA1BB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F904865B203A5C3B00FCA1BB /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		5D35509220391A0A00CC21F1 /* MemeMatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D35509620391A0A00CC21F1 /* MemeMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMatcherTests.swift; sourceTree = "<group>"; };
 		5D35509820391A0A00CC21F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F904865B203A5C3B00FCA1BB /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				5D35508820391A0A00CC21F1 /* Assets.xcassets */,
 				5D35508A20391A0A00CC21F1 /* LaunchScreen.storyboard */,
 				5D35508D20391A0A00CC21F1 /* Info.plist */,
+				F904865B203A5C3B00FCA1BB /* ThirdViewController.swift */,
 			);
 			path = MemeMatcher;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				5D35508420391A0A00CC21F1 /* SecondViewController.swift in Sources */,
 				5D35508020391A0A00CC21F1 /* AppDelegate.swift in Sources */,
+				F904865C203A5C3B00FCA1BB /* ThirdViewController.swift in Sources */,
 				5D35508220391A0A00CC21F1 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

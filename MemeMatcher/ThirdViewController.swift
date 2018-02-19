@@ -1,24 +1,23 @@
 //
-//  FirstViewController.swift
+//  ThirdViewController.swift
 //  MemeMatcher
 //
-//  Created by Seth Little on 2/17/18.
+//  Created by Hyun Chu on 2/18/18.
 //  Copyright © 2018 Seth Little. All rights reserved.
 //
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ThirdViewController: UIViewController {
     
     //MARK: Properties
+    @IBOutlet weak var signinNameTextField: UITextField!
+    @IBOutlet weak var signinPasswordTextField: UITextField!
     
-    @IBOutlet weak var signupNameTextField: UITextField!
-    @IBOutlet weak var signupPasswordTextField: UITextField!
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,17 +39,17 @@ class FirstViewController: UIViewController {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "meme-matcher.herokuapp.com"
-        urlComponents.path = "/api/users"
+        urlComponents.path = "/api/session"
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-
+        
         var headers = request.allHTTPHeaderFields ?? [:]
         headers["Content-Type"] = "application/json"
         request.allHTTPHeaderFields = headers
         
-
+        
         let encoder = JSONEncoder()
         do {
             let jsonData = try encoder.encode(user)
@@ -80,11 +79,11 @@ class FirstViewController: UIViewController {
         task.resume()
     }
     
-
-    //MARK: Action
+    //MARK: Actions
     
-    @IBAction func createAccountTap(_ sender: UITapGestureRecognizer) {
-        let myUser = User(username: signupNameTextField.text!, password: signupPasswordTextField.text!)
+    @IBAction func createSessionTap(_ sender: UITapGestureRecognizer) {
+        
+        let myUser = User(username: signinNameTextField.text!, password: signinPasswordTextField.text!)
         submitUser(user: myUser) { (error) in
             if let error = error {
                 fatalError(error.localizedDescription)
@@ -92,5 +91,16 @@ class FirstViewController: UIViewController {
         }
     }
     
-}
+    
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
