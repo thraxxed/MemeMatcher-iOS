@@ -48,8 +48,9 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SourceSansProItalic.ttf</string>
-		<string>SourceSansProRegular.ttf</string>
+		<string>VitroMedium.ttf</string>
+		<string>VitroBold.ttf</string>
+		<string>VitroItalic.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

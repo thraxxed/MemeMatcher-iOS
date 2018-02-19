@@ -15,6 +15,12 @@
 		5D35508C20391A0A00CC21F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D35508A20391A0A00CC21F1 /* LaunchScreen.storyboard */; };
 		5D35509720391A0A00CC21F1 /* MemeMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35509620391A0A00CC21F1 /* MemeMatcherTests.swift */; };
 		F904865C203A5C3B00FCA1BB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F904865B203A5C3B00FCA1BB /* ThirdViewController.swift */; };
+		F9C44EFC203B50F500BD2A02 /* VitroBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EF9203B50F500BD2A02 /* VitroBold.ttf */; };
+		F9C44EFD203B50F500BD2A02 /* VitroBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EF9203B50F500BD2A02 /* VitroBold.ttf */; };
+		F9C44EFE203B50F500BD2A02 /* VitroItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EFA203B50F500BD2A02 /* VitroItalic.ttf */; };
+		F9C44EFF203B50F500BD2A02 /* VitroItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EFA203B50F500BD2A02 /* VitroItalic.ttf */; };
+		F9C44F00203B50F500BD2A02 /* VitroMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EFB203B50F500BD2A02 /* VitroMedium.ttf */; };
+		F9C44F01203B50F500BD2A02 /* VitroMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EFB203B50F500BD2A02 /* VitroMedium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,9 @@
 		5D35509620391A0A00CC21F1 /* MemeMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMatcherTests.swift; sourceTree = "<group>"; };
 		5D35509820391A0A00CC21F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F904865B203A5C3B00FCA1BB /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		F9C44EF9203B50F500BD2A02 /* VitroBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VitroBold.ttf; sourceTree = "<group>"; };
+		F9C44EFA203B50F500BD2A02 /* VitroItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VitroItalic.ttf; sourceTree = "<group>"; };
+		F9C44EFB203B50F500BD2A02 /* VitroMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VitroMedium.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +75,7 @@
 				5D35507E20391A0A00CC21F1 /* MemeMatcher */,
 				5D35509520391A0A00CC21F1 /* MemeMatcherTests */,
 				5D35507D20391A0A00CC21F1 /* Products */,
+				F9C44EF8203B50F500BD2A02 /* Vitro */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +110,16 @@
 				5D35509820391A0A00CC21F1 /* Info.plist */,
 			);
 			path = MemeMatcherTests;
+			sourceTree = "<group>";
+		};
+		F9C44EF8203B50F500BD2A02 /* Vitro */ = {
+			isa = PBXGroup;
+			children = (
+				F9C44EF9203B50F500BD2A02 /* VitroBold.ttf */,
+				F9C44EFA203B50F500BD2A02 /* VitroItalic.ttf */,
+				F9C44EFB203B50F500BD2A02 /* VitroMedium.ttf */,
+			);
+			path = Vitro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +205,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C44EFE203B50F500BD2A02 /* VitroItalic.ttf in Resources */,
 				5D35508C20391A0A00CC21F1 /* LaunchScreen.storyboard in Resources */,
+				F9C44F00203B50F500BD2A02 /* VitroMedium.ttf in Resources */,
 				5D35508920391A0A00CC21F1 /* Assets.xcassets in Resources */,
+				F9C44EFC203B50F500BD2A02 /* VitroBold.ttf in Resources */,
 				5D35508720391A0A00CC21F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C44EFD203B50F500BD2A02 /* VitroBold.ttf in Resources */,
+				F9C44EFF203B50F500BD2A02 /* VitroItalic.ttf in Resources */,
+				F9C44F01203B50F500BD2A02 /* VitroMedium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
