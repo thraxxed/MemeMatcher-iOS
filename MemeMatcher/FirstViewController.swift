@@ -86,11 +86,11 @@ class FirstViewController: UIViewController {
             // APIs usually respond with the data you just sent in your POST request
             if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
                 print("response: ", utf8Representation)
+                
                 let currentUserJSON = try? JSONSerialization.jsonObject(with: data)
                 if ((currentUserJSON! as AnyObject)["username"] == nil) {
                     return
                 }
-            
                 let username = (currentUserJSON! as AnyObject)["username"]!!
                 let id = (currentUserJSON! as AnyObject)["id"]!!
                 let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
@@ -100,8 +100,7 @@ class FirstViewController: UIViewController {
                 let picture_url2 = picture_url as! String
                 
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2)
-                
-                print((currentUserJSON! as AnyObject)["username"]!!)
+            
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignUp", sender: self)
                 }
