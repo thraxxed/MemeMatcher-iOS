@@ -106,43 +106,48 @@
             <point key="canvasLocation" x="764" y="44.527736131934034"/>
         </scene>
         <!--Item-->
-        <scene sceneID="uFd-M3-78i">
+        <scene sceneID="7Th-oa-K4I">
             <objects>
-                <viewController id="xKA-TY-Bax" customClass="FourthViewController" customModule="MemeMatcher" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aUq-zi-ipB">
+                <viewController id="QKM-nc-fTb" customClass="FifthViewController" customModule="MemeMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SdE-Zu-rEj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N9y-Dv-0AF">
-                                <rect key="frame" x="27" y="59" width="320" height="320"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hYL-Nd-RLf">
+                                <rect key="frame" x="67" y="109" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Qxo-Av-1yf">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HBt-CB-FAR">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="nbS-FE-3aq" appends="YES" id="j04-EV-7IC"/>
-                                        </connections>
-                                    </imageView>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Lcv-b2-lC6">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="ZRw-oZ-c36" appends="YES" id="cDc-Ak-OHF"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="u1o-uS-WrX"/>
+                        <viewLayoutGuide key="safeArea" id="LEE-cb-J4z"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="JJx-gP-nmm"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="k41-3M-Rvh"/>
                     <connections>
-                        <outlet property="photoImageView" destination="Qxo-Av-1yf" id="MNa-nj-5hH"/>
+                        <outlet property="photoImageView" destination="Lcv-b2-lC6" id="r7J-ru-he0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ib6-U9-baB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="nbS-FE-3aq">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TcD-2k-xub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZRw-oZ-c36">
                     <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="xKA-TY-Bax" id="5Ig-uN-aR8"/>
+                        <action selector="selectImageFromPhotoLibrary:" destination="QKM-nc-fTb" id="GYj-DS-gPB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-151" y="920"/>
+            <point key="canvasLocation" x="84" y="1506"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -323,7 +328,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="ooC-Ll-4fA" kind="relationship" relationship="viewControllers" id="ogc-Bd-AoV"/>
-                        <segue destination="xKA-TY-Bax" kind="relationship" relationship="viewControllers" id="9kO-vU-cMl"/>
+                        <segue destination="QKM-nc-fTb" kind="relationship" relationship="viewControllers" id="Ouj-hg-JTp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

@@ -1,5 +1,5 @@
 //
-//  FourthViewController.swift
+//  FifthViewController.swift
 //  MemeMatcher
 //
 //  Created by Zach Smith on 2/19/18.
@@ -8,20 +8,21 @@
 
 import UIKit
 
-
-
-class FourthViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+class FifthViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Properties
-    
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
 
-    //MARK: UIImagePickerControllerDelegate
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -39,11 +40,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismiss(animated: true, completion: nil)
     }
     //MARK: Actions
-
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        // Hide the keyboard.
-        //        nameTextField.resignFirstResponder()
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
         // Only allow photos to be picked, not taken.
         imagePickerController.sourceType = .photoLibrary
@@ -51,5 +48,16 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
