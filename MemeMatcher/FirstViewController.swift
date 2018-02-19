@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class User {
     var id: Int
@@ -19,22 +20,43 @@ class User {
     }
 }
 
+var longitude: Double = -1
+var latitude: Double = -1
+
 let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "")
 var currentUser: User = nullUser
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, CLLocationManagerDelegate {
 
     //MARK: Properties
     
     @IBOutlet weak var signupNameTextField: UITextField!
     @IBOutlet weak var signupPasswordTextField: UITextField!
-
-
+    
+    var locManager = CLLocationManager()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "lul")!).withAlphaComponent(0.98)
-
+        
+        // CALCULATE LOCATION
+        locManager.requestWhenInUseAuthorization()
+        locManager.requestAlwaysAuthorization()
+        
+        var currentLocation: CLLocation!
+        
+        currentLocation = locManager.location
+        
+        MemeMatcher.longitude = currentLocation.coordinate.longitude
+        MemeMatcher.latitude = currentLocation.coordinate.latitude
+        
+        print("hey!")
+        print(MemeMatcher.longitude)
+        print(MemeMatcher.latitude)
+        
+        // END OF LOCATION STUFF
     }
 
     override func didReceiveMemoryWarning() {
