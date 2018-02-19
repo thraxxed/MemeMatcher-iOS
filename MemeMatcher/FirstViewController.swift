@@ -76,6 +76,7 @@ class FirstViewController: UIViewController {
                 print("no readable data received in response")
             }
         }
+        
         task.resume()
     }
     
@@ -83,9 +84,6 @@ class FirstViewController: UIViewController {
     //MARK: Action
     
     @IBAction func createAccountTap(_ sender: UITapGestureRecognizer) {
-        print(signupNameTextField.text ?? "")
-        print(signupPasswordTextField.text ?? "")
-        
         let myUser = User(username: signupNameTextField.text!, password: signupPasswordTextField.text!)
         submitUser(user: myUser) { (error) in
             if let error = error {

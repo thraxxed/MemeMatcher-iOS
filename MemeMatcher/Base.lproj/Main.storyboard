@@ -63,6 +63,7 @@
                 <tapGestureRecognizer id="Ijz-Hl-Mr0">
                     <connections>
                         <action selector="createAccountTap:" destination="9pv-A4-QxB" id="gW4-l8-9OX"/>
+                        <segue destination="8rJ-Kc-sve" kind="show" id="2hv-J5-y2A"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -90,10 +91,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-hZ-1cp">
-                                <rect key="frame" x="12" y="133" width="351" height="405"/>
+                                <rect key="frame" x="12" y="133" width="351" height="400"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="dDm-sO-G1A">
-                                        <rect key="frame" x="0.0" y="0.0" width="351" height="405"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="400"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dDm-sO-G1A" secondAttribute="height" multiplier="3:4" id="TNJ-0R-rnQ"/>
@@ -182,4 +183,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2hv-J5-y2A"/>
+    </inferredMetricsTieBreakers>
 </document>
