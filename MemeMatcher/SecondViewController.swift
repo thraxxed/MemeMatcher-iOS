@@ -31,7 +31,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
                 let url = URL(string: self.memes[self.memeIndex].image_url)
                 
                 DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    let data = try? Data(contentsOf: url!)
                     DispatchQueue.main.async {
                         self.memeImage.image = UIImage(data: data!)
                     }
@@ -79,17 +79,8 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
                 if let error = responseError {
                     completion?(.failure(error))
                 } else if let jsonData = responseData {
-                    // Now we have jsonData, Data representation of the JSON returned to us
-                    // from our URLRequest...
-                    
-                    // Create an instance of JSONDecoder to decode the JSON data to our
-                    // Codable struct
                     let decoder = JSONDecoder()
-                    
                     do {
-                        // We would use Meme.self for JSON representing a single Meme
-                        // object, and [Meme].self for JSON representing an array of
-                        // Meme objects
                         let memes = try decoder.decode([Meme].self, from: jsonData)
                         completion?(.success(memes))
                     } catch {
@@ -113,7 +104,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         let url = URL(string: self.memes[self.memeIndex].image_url)
         
         DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
                 self.memeImage.image = UIImage(data: data!)
             }
