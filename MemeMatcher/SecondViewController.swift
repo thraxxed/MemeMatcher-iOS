@@ -191,36 +191,37 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //Mark: Actions
     
-    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        print("we swiped right")
-        
+    func sendLike(liked: Bool) {
         let postLike = Like(meme_id: self.memes[self.memeIndex].id,
                             user_id: MemeMatcher.currentUser.id,
-                            liked: true)
+                            liked: liked)
         likeMeme(like: postLike) { (error) in
             if let error = error {
-             fatalError(error.localizedDescription)
+                fatalError(error.localizedDescription)
             }
         }
-        
         loadMemeImage()
-        
+    }
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        print("we swiped right")
+        sendLike(liked: true)
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
         print("we swiped left")
-        loadMemeImage()
+        sendLike(liked: false)
     }
     
     
     @IBAction func heartMeme(_ sender: UIButton) {
         print("we clicked heart")
-        loadMemeImage()
+        sendLike(liked: true)
     }
     
     @IBAction func dislikeMeme(_ sender: UIButton) {
         print("we clicked x")
-        loadMemeImage()
+        sendLike(liked: false)
     }
     
     
