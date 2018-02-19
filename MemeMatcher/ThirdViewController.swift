@@ -71,6 +71,9 @@ class ThirdViewController: UIViewController {
             // APIs usually respond with the data you just sent in your POST request
             if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
                 print("response: ", utf8Representation)
+                DispatchQueue.main.async(){
+                    self.performSegue(withIdentifier: "successfulSignIn", sender: self)
+                }
             } else {
                 print("no readable data received in response")
             }
