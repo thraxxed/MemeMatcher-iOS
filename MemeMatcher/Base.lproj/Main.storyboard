@@ -69,13 +69,13 @@
                     <connections>
                         <outlet property="signupNameTextField" destination="J1C-PI-RJa" id="EKy-bF-9V4"/>
                         <outlet property="signupPasswordTextField" destination="i2J-Ke-v76" id="dns-w2-BE4"/>
+                        <segue destination="8rJ-Kc-sve" kind="show" identifier="successfulSignUp" id="7Uv-Bi-IGT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ijz-Hl-Mr0">
                     <connections>
                         <action selector="createAccountTap:" destination="9pv-A4-QxB" id="gW4-l8-9OX"/>
-                        <segue destination="8rJ-Kc-sve" kind="show" id="2hv-J5-y2A"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="GZk-Vs-xKd">
@@ -84,7 +84,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="764" y="44.527736131934034"/>
+            <point key="canvasLocation" x="764" y="45"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -175,7 +175,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="764" y="757"/>
+            <point key="canvasLocation" x="764" y="964"/>
         </scene>
         <!--Item-->
         <scene sceneID="aKh-aK-6py">
@@ -249,7 +249,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="764" y="-664"/>
+            <point key="canvasLocation" x="1694" y="45"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -277,7 +277,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XrI-LL-6XX"/>
-        <segue reference="2hv-J5-y2A"/>
+        <segue reference="7Uv-Bi-IGT"/>
         <segue reference="iI7-L5-ec4"/>
     </inferredMetricsTieBreakers>
 </document>
