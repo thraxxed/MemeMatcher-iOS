@@ -127,10 +127,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-hZ-1cp">
-                                <rect key="frame" x="12" y="133" width="351" height="400"/>
+                                <rect key="frame" x="12" y="133" width="351" height="405"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="dDm-sO-G1A">
-                                        <rect key="frame" x="0.0" y="0.0" width="351" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="405"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dDm-sO-G1A" secondAttribute="height" multiplier="3:4" id="TNJ-0R-rnQ"/>
@@ -296,8 +296,8 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XrI-LL-6XX"/>
-        <segue reference="7Uv-Bi-IGT"/>
-        <segue reference="iI7-L5-ec4"/>
+        <segue reference="ogc-Bd-AoV"/>
+        <segue reference="lzU-1b-eKA"/>
+        <segue reference="u7Y-xg-7CH"/>
     </inferredMetricsTieBreakers>
 </document>
