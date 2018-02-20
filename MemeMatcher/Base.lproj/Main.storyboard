@@ -164,6 +164,7 @@
                     <connections>
                         <outlet property="photoImageView" destination="Py2-Q9-KtS" id="tWb-eB-j3W"/>
                         <outlet property="submitUpdate" destination="1aA-xn-HWP" id="Cqt-UZ-gBo"/>
+                        <segue destination="8rJ-Kc-sve" kind="show" identifier="successfulUserUpdate" id="GAq-re-BFO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hx-y9-9ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,6 +219,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVJ-kG-EGT">
                                 <rect key="frame" x="24" y="37" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jb2-Ub-Gcd" appends="YES" id="KhT-90-cRn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdh-QE-fpy">
                                 <rect key="frame" x="321" y="37" width="30" height="30"/>
@@ -259,6 +264,12 @@
                         <action selector="swipeLeft:" destination="8rJ-Kc-sve" id="Vjp-c2-O0l"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="jb2-Ub-Gcd">
+                    <connections>
+                        <action selector="viewUserProfile:" destination="8rJ-Kc-sve" id="sY1-0y-MQR"/>
+                        <segue destination="L0k-N2-wWv" kind="show" identifier="updateProfile" id="VD8-QX-R9Z"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="540" y="1013"/>
         </scene>
@@ -384,8 +395,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XrI-LL-6XX"/>
-        <segue reference="lzU-1b-eKA"/>
-        <segue reference="bpj-3x-Md2"/>
+        <segue reference="GAq-re-BFO"/>
+        <segue reference="VD8-QX-R9Z"/>
         <segue reference="iI7-L5-ec4"/>
     </inferredMetricsTieBreakers>
 </document>

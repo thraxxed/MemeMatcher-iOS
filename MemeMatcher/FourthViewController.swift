@@ -89,6 +89,9 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
                 return
             }
         }
+        DispatchQueue.main.async(){
+            self.performSegue(withIdentifier: "successfulUserUpdate", sender: self)
+        }
         task.resume()
     }
 

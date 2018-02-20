@@ -184,6 +184,12 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //Mark: Actions
     
+    @IBAction func viewUserProfile(_ sender: UITapGestureRecognizer) {
+        DispatchQueue.main.async(){
+            self.performSegue(withIdentifier: "updateProfile", sender: self)
+        }
+        
+    }
     func sendLike(liked: Bool) {
         let postLike = Like(meme_id: self.memes[self.memeIndex].id,
                             user_id: MemeMatcher.currentUser.id,
