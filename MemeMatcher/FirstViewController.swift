@@ -16,20 +16,22 @@ class User {
     var latitude: Double
     var longitude: Double
     var age: Int
-    init(id: Int, username: String, picture_url: String, latitude: Double, longitude: Double, age: Int) {
+    var gender: String
+    init(id: Int, username: String, picture_url: String, latitude: Double, longitude: Double, age: Int, gender: String) {
         self.id = id
         self.username = username
         self.picture_url = picture_url
         self.latitude = latitude
         self.longitude = longitude
         self.age = age
+        self.gender = gender
     }
 }
 
 var longitude: Double = -1
 var latitude: Double = -1
 
-let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "", latitude: -1, longitude: -1, age: -1)
+let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "", latitude: -1, longitude: -1, age: -1, gender: "F")
 var currentUser: User = nullUser
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
@@ -128,15 +130,18 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                 let id = (currentUserJSON! as AnyObject)["id"]!!
                 let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
                 let age = (currentUserJSON! as AnyObject)["age"]!!
+                let gender = (currentUserJSON! as AnyObject)["gender"]!!
                 
                 let username2 = username as! String
                 let id2 = id as! Int
                 let picture_url2 = picture_url as! String
                 let age2 = age as! Int
+                let gender2 = gender as! String
                 
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
                                                            latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude,
-                                                           age: age2)
+                                                           age: age2,
+                                                           gender: gender2)
             
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignUp", sender: self)

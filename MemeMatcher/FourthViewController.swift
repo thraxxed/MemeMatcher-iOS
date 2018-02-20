@@ -15,10 +15,12 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var userBioField: UITextField!
     @IBOutlet weak var userGenderMale: UIStackView!
     
+    @IBOutlet weak var userGenderFemale: UIButton!
     
     @IBOutlet weak var ageSlider: UISlider!
     @IBOutlet weak var ageLabel: UILabel!
-
+    
+    var currentGender = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +40,13 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         let picture: String
         let bio: String
         let age: Int
-        init(id: Int, picture: String, bio: String, age: Int) {
+        let gender: String
+        init(id: Int, picture: String, bio: String, age: Int, gender: String) {
             self.id = id
             self.picture = picture
             self.bio = bio
             self.age = age
+            self.gender = gender
         }
     }
     
@@ -122,7 +126,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func updateUserProfile(_ sender: UITapGestureRecognizer) {
-        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr, bio: userBioField.text!, age: Int(ageLabel.text!)!)
+        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr, bio: userBioField.text!, age: Int(ageLabel.text!)!, gender: currentGender)
         patchUser(editUser: editedUser) { (error) in
             if let error = error {
                 fatalError(error.localizedDescription)
@@ -136,5 +140,8 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         ageLabel.text = "\(currentValue)"
     }
     
-
+    @IBAction func changeGenderMale(_ sender: UITapGestureRecognizer) {
+        currentGender = "M"
+    }
+    
 }

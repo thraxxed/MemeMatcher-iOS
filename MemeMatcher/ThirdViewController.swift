@@ -80,14 +80,17 @@ class ThirdViewController: UIViewController {
                 let id = (currentUserJSON! as AnyObject)["id"]!!
                 let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
                 let age = (currentUserJSON! as AnyObject)["age"]!!
+                let gender = (currentUserJSON! as AnyObject)["gender"]!!
                 
                 let username2 = username as! String
                 let id2 = id as! Int
                 let picture_url2 = picture_url as! String
                 let age2 = age as! Int
+                let gender2 = gender as! String
                 
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
-                                                           latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude, age: age2)
+                                                           latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude, age: age2,
+                                                        gender:gender2)
                 
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignIn", sender: self)
