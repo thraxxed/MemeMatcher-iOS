@@ -12,6 +12,10 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Properties
     @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var userProfileButton: UIButton!
+    @IBOutlet weak var userChatButton: UIButton!
     
     var memes = [Meme]()
     
@@ -20,7 +24,20 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("BBB")
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "heavyrainbackground")!)
+        
+        memeImage.layer.borderWidth = 1.5
+        memeImage.layer.borderColor = UIColor.white.cgColor
+        
+        dislikeButton.setImage(UIImage(named: "dislikeButton"), for: .normal)
+        
+        likeButton.setImage(UIImage(named: "likeButton"), for: .normal)
+        
+        userProfileButton.setImage(UIImage(named: "userProfile"), for: .normal)
+        
+        userChatButton.setImage(UIImage(named: "userChatButton"), for: .normal)
+        
+        
         print(MemeMatcher.currentUser.username)
         
         // Do any additional setup after loading the view, typically from a nib.
