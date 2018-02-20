@@ -11,6 +11,7 @@ import UIKit
 class FourthViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK Properties:
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var submitUpdate: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +47,14 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         photoImageView.image = selectedImage
         
         let imageData:Data = UIImagePNGRepresentation(selectedImage)!
-        let imageStr = imageData.base64EncodedString()
+        imageStr = imageData.base64EncodedString()
         
-        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr)
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
+    
+    var imageStr = ""
     
     func patchUser(editUser: EditUser, completion:((Error?) -> Void)?) {
         var urlComponents = URLComponents()
@@ -101,6 +103,15 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(imagePickerController, animated: true, completion: nil)
     }
     
-  
+    @IBAction func updateUserProfile(_ sender: UITapGestureRecognizer) {
+        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr)
+        patchUser(editUser: editedUser) { (error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            }
+        }
+    }
+    
+    
 
 }

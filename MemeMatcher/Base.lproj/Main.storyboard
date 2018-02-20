@@ -98,7 +98,7 @@
                     <connections>
                         <outlet property="signupNameTextField" destination="J1C-PI-RJa" id="EKy-bF-9V4"/>
                         <outlet property="signupPasswordTextField" destination="i2J-Ke-v76" id="dns-w2-BE4"/>
-                        <segue destination="8rJ-Kc-sve" kind="show" identifier="successfulSignUp" id="7Uv-Bi-IGT"/>
+                        <segue destination="L0k-N2-wWv" kind="show" identifier="successfulSignUp" id="bpj-3x-Md2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -123,13 +123,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-dq-p8E">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-dq-p8E">
                                 <rect key="frame" x="67" y="254.5" width="240" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZaN-AU-uXw">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZaN-AU-uXw">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <subviews>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <gestureRecognizers/>
                                                 <connections>
@@ -138,7 +139,7 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
                                         <rect key="frame" x="0.0" y="128" width="240" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -146,23 +147,34 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
+                                <rect key="frame" x="138" y="447" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="Update Profile"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jh1-XT-LON" appends="YES" id="aMA-nh-r5p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="q5l-dq-p8E" firstAttribute="centerY" secondItem="UCK-dc-h3Y" secondAttribute="centerY" id="Kyr-nd-BF0"/>
-                            <constraint firstItem="q5l-dq-p8E" firstAttribute="centerX" secondItem="UCK-dc-h3Y" secondAttribute="centerX" id="R21-xz-z7A"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8y3-Q3-KrC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0kb-O2-9oq"/>
                     <connections>
                         <outlet property="photoImageView" destination="Py2-Q9-KtS" id="tWb-eB-j3W"/>
+                        <outlet property="submitUpdate" destination="1aA-xn-HWP" id="Cqt-UZ-gBo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hx-y9-9ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="EAQ-P2-hF2">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="L0k-N2-wWv" id="5Gj-ge-mlG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jh1-XT-LON">
+                    <connections>
+                        <action selector="updateUserProfile:" destination="L0k-N2-wWv" id="E0n-g2-VZJ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -371,8 +383,9 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ogc-Bd-AoV"/>
+        <segue reference="XrI-LL-6XX"/>
         <segue reference="lzU-1b-eKA"/>
-        <segue reference="u7Y-xg-7CH"/>
+        <segue reference="bpj-3x-Md2"/>
+        <segue reference="iI7-L5-ec4"/>
     </inferredMetricsTieBreakers>
 </document>
