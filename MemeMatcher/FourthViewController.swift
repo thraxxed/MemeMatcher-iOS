@@ -60,7 +60,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "meme-matcher.herokuapp.com"
-        urlComponents.path = "/api/users/\(MemeMatcher.currentUser.id)/edit"
+        urlComponents.path = "/api/users/\(MemeMatcher.currentUser.id)"
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
         var request = URLRequest(url: url)
