@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -127,41 +128,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-4g-HJs">
-                                <rect key="frame" x="-24.5" y="166" width="424" height="336"/>
+                                <rect key="frame" x="-56.5" y="110" width="488" height="448"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
-                                        <rect key="frame" x="92" y="0.0" width="240" height="128"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
+                                        <rect key="frame" x="124" y="0.0" width="240" height="240"/>
                                         <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Py2-Q9-KtS" secondAttribute="height" multiplier="1:1" id="9bE-9l-SPE"/>
+                                        </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="EAQ-P2-hF2" appends="YES" id="zhD-ma-zec"/>
                                         </connections>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
-                                        <rect key="frame" x="10" y="136" width="404" height="30"/>
+                                        <rect key="frame" x="10" y="248" width="468" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-GS-ls5">
-                                        <rect key="frame" x="194.5" y="174" width="35" height="20.5"/>
+                                        <rect key="frame" x="226.5" y="286" width="35" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="18" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-8T-szJ">
-                                        <rect key="frame" x="51" y="202.5" width="322" height="31"/>
+                                        <rect key="frame" x="51" y="314.5" width="386" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="L0k-N2-wWv" eventType="valueChanged" id="5cA-XM-RaT"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-kq-LnM">
-                                        <rect key="frame" x="203" y="240.5" width="18.5" height="20.5"/>
+                                        <rect key="frame" x="235" y="352.5" width="18.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-JK-1DX">
-                                        <rect key="frame" x="149" y="269" width="126" height="33"/>
+                                        <rect key="frame" x="181" y="381" width="126" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-4N-LwM">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="33"/>
@@ -184,7 +188,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
-                                        <rect key="frame" x="173.5" y="310" width="77" height="26"/>
+                                        <rect key="frame" x="205.5" y="422" width="77" height="26"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                         <state key="normal" title="Update Profile"/>
