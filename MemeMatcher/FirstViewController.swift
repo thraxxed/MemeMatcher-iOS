@@ -13,17 +13,21 @@ class User {
     var id: Int
     var username: String
     var picture_url: String
-    init(id: Int, username: String, picture_url: String) {
+    var latitude: Double
+    var longitude: Double
+    init(id: Int, username: String, picture_url: String, latitude: Double, longitude: Double) {
         self.id = id
         self.username = username
         self.picture_url = picture_url
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
 
 var longitude: Double = -1
 var latitude: Double = -1
 
-let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "")
+let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "", latitude: -1, longitude: -1)
 var currentUser: User = nullUser
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
@@ -67,6 +71,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     struct User: Codable {
         let username: String
         let password: String
+        let latitude: Double
+        let longitude: Double
     }
     
     enum Result<Value> {
@@ -123,7 +129,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                 let id2 = id as! Int
                 let picture_url2 = picture_url as! String
                 
-                MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2)
+                MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
+                                                           latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude)
             
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignUp", sender: self)
@@ -137,7 +144,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func createAccountTap(_ sender: UITapGestureRecognizer) {
-        let myUser = User(username: signupNameTextField.text!, password: signupPasswordTextField.text!)
+        let myUser = User(username: signupNameTextField.text!, password: signupPasswordTextField.text!,
+                          latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude)
         submitUser(user: myUser) { (error) in
             if let error = error {
                 fatalError(error.localizedDescription)
