@@ -16,6 +16,9 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var userGenderMale: UIStackView!
     
     
+    @IBOutlet weak var ageSlider: UISlider!
+    @IBOutlet weak var ageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -119,6 +122,12 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
                 fatalError(error.localizedDescription)
             }
         }
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        
+        ageLabel.text = "\(currentValue)"
     }
     
 
