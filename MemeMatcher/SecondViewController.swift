@@ -168,10 +168,10 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func loadMemeImage() {
-        memeIndex += 1
-        if (memeIndex >= self.memes.count) {
+        if (memeIndex >= self.memes.count-1) {
             return
         }
+        memeIndex += 1
         let url = URL(string: self.memes[self.memeIndex].image_url)
         
         DispatchQueue.global().async {
