@@ -24,6 +24,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         
         ageSlider.value = Float(MemeMatcher.currentUser.age)
+        ageLabel.text = "\(Int(ageSlider.value))"
         // Do any additional setup after loading the view.
     }
 
@@ -81,6 +82,8 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         var headers = request.allHTTPHeaderFields ?? [:]
         headers["Content-Type"] = "application/json"
         request.allHTTPHeaderFields = headers
+        
+        MemeMatcher.currentUser.age = editUser.age
         
         
         let encoder = JSONEncoder()
