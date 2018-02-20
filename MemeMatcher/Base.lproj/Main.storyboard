@@ -342,14 +342,11 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
         <segue reference="ogc-Bd-AoV"/>
         <segue reference="lzU-1b-eKA"/>
         <segue reference="u7Y-xg-7CH"/>
-=======
         <segue reference="XrI-LL-6XX"/>
         <segue reference="q03-Cf-ibG"/>
         <segue reference="iI7-L5-ec4"/>
->>>>>>> 04a5d46a333de44eb680ea9e48fece1596c78510
     </inferredMetricsTieBreakers>
 </document>
