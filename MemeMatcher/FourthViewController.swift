@@ -23,8 +23,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        ageSlider.value = MemeMatcher.currentUser.age
-        
+        ageSlider.value = Float(MemeMatcher.currentUser.age)
         // Do any additional setup after loading the view.
     }
 

@@ -15,19 +15,21 @@ class User {
     var picture_url: String
     var latitude: Double
     var longitude: Double
-    init(id: Int, username: String, picture_url: String, latitude: Double, longitude: Double) {
+    var age: Int
+    init(id: Int, username: String, picture_url: String, latitude: Double, longitude: Double, age: Int) {
         self.id = id
         self.username = username
         self.picture_url = picture_url
         self.latitude = latitude
         self.longitude = longitude
+        self.age = age
     }
 }
 
 var longitude: Double = -1
 var latitude: Double = -1
 
-let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "", latitude: -1, longitude: -1)
+let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "", latitude: -1, longitude: -1, age: -1)
 var currentUser: User = nullUser
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
@@ -125,13 +127,16 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                 let username = (currentUserJSON! as AnyObject)["username"]!!
                 let id = (currentUserJSON! as AnyObject)["id"]!!
                 let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
+                let age = (currentUserJSON! as AnyObject)["age"]!!
                 
                 let username2 = username as! String
                 let id2 = id as! Int
                 let picture_url2 = picture_url as! String
+                let age2 = age as! Int
                 
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
-                                                           latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude)
+                                                           latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude,
+                                                           age: age2)
             
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignUp", sender: self)
