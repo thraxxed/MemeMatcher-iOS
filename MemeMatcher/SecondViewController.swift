@@ -67,7 +67,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
             self.user_id = user_id
             self.liked = liked
         }
-        
     }
     
     
@@ -112,7 +111,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func likeMeme(like: Like, completion:((Error?) -> Void)?){
-//        memeIndex += 1
         if (memeIndex == self.memes.count) {
             print("sorry, your out of memes")
             return
