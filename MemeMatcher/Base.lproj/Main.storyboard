@@ -115,6 +115,45 @@
             </objects>
             <point key="canvasLocation" x="764" y="44.527736131934034"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="Mj1-w9-Yoi">
+            <objects>
+                <viewController id="L0k-N2-wWv" customClass="FourthViewController" customModule="MemeMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UCK-dc-h3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-dq-p8E">
+                                <rect key="frame" x="67" y="74" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="EAQ-P2-hF2" appends="YES" id="zhD-ma-zec"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8y3-Q3-KrC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="0kb-O2-9oq"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="Py2-Q9-KtS" id="tWb-eB-j3W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hx-y9-9ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EAQ-P2-hF2">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="L0k-N2-wWv" id="5Gj-ge-mlG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-559" y="727"/>
+        </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -303,6 +342,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="ooC-Ll-4fA" kind="relationship" relationship="viewControllers" id="ogc-Bd-AoV"/>
+                        <segue destination="L0k-N2-wWv" kind="relationship" relationship="viewControllers" id="oYs-DP-pHe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -311,12 +351,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backgroundimage" width="1440" height="900"/>
+        <image name="defaultImage" width="320" height="320"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XrI-LL-6XX"/>
-        <segue reference="q03-Cf-ibG"/>
-        <segue reference="iI7-L5-ec4"/>
+        <segue reference="ogc-Bd-AoV"/>
+        <segue reference="lzU-1b-eKA"/>
+        <segue reference="u7Y-xg-7CH"/>
     </inferredMetricsTieBreakers>
 </document>
