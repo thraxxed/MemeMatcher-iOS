@@ -123,16 +123,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OH-Pf-E9k">
-                                <rect key="frame" x="265" y="555" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="heartMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DGr-Wd-AT3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-aa-bZl">
-                                <rect key="frame" x="80" y="555" width="30" height="30"/>
+                                <rect key="frame" x="100" y="555" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.24567024793286474" blue="0.24742563507202253" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="dislikeMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wqN-zr-Ncb"/>
                                 </connections>
@@ -156,8 +150,24 @@
                                     <outletCollection property="gestureRecognizers" destination="5fY-9Q-rvi" appends="YES" id="eKb-22-Tse"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVJ-kG-EGT">
+                                <rect key="frame" x="24" y="37" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdh-QE-fpy">
+                                <rect key="frame" x="321" y="37" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OH-Pf-E9k">
+                                <rect key="frame" x="244" y="555" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.80784313725490198" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="heartMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DGr-Wd-AT3"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98721050126903553" green="0.98721050126903553" blue="0.98721050126903553" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dDm-sO-G1A" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="AXh-kt-pgo"/>
                             <constraint firstItem="dDm-sO-G1A" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-40" id="bj8-eK-lTJ"/>
@@ -169,6 +179,8 @@
                         <outlet property="dislikeButton" destination="Syn-aa-bZl" id="EFf-md-jrL"/>
                         <outlet property="likeButton" destination="8OH-Pf-E9k" id="fEq-V7-RgR"/>
                         <outlet property="memeImage" destination="dDm-sO-G1A" id="jtW-Ru-yuo"/>
+                        <outlet property="userChatButton" destination="wdh-QE-fpy" id="yea-y6-lWP"/>
+                        <outlet property="userProfileButton" destination="VVJ-kG-EGT" id="3gV-ES-bFP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
