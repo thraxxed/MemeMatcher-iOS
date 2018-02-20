@@ -23,6 +23,15 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
+    struct EditUser: Codable {
+        let id: Int
+        let picture: String
+        init(id: Int, picture: String) {
+            self.id = id
+            self.picture = picture
+        }
+    }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -36,8 +45,49 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Set photoImageView to display the selected image.
         photoImageView.image = selectedImage
         
+        let imageData:Data = UIImagePNGRepresentation(selectedImage)!
+        let imageStr = imageData.base64EncodedString()
+        
+        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr)
+        
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
+    }
+    
+    func patchUser(editUser: EditUser, completion:((Error?) -> Void)?) {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "meme-matcher.herokuapp.com"
+        urlComponents.path = "/api/users/\(MemeMatcher.currentUser.id)/edit"
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        
+        let encoder = JSONEncoder()
+        do {
+            let jsonData = try encoder.encode(editUser)
+            request.httpBody = jsonData
+            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+        } catch {
+            completion?(error)
+        }
+        
+        // Create and run a URLSession data task with our JSON encoded POST request
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+            guard responseError == nil else {
+                completion?(responseError!)
+                return
+            }
+        }
+        task.resume()
     }
 
     
