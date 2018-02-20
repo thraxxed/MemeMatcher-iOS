@@ -123,21 +123,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-dq-p8E">
-                                <rect key="frame" x="67" y="74" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-dq-p8E">
+                                <rect key="frame" x="67" y="254.5" width="240" height="158"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZaN-AU-uXw">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="EAQ-P2-hF2" appends="YES" id="zhD-ma-zec"/>
-                                        </connections>
-                                    </imageView>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="EAQ-P2-hF2" appends="YES" id="zhD-ma-zec"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
+                                        <rect key="frame" x="0.0" y="128" width="240" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q5l-dq-p8E" firstAttribute="centerY" secondItem="UCK-dc-h3Y" secondAttribute="centerY" id="Kyr-nd-BF0"/>
+                            <constraint firstItem="q5l-dq-p8E" firstAttribute="centerX" secondItem="UCK-dc-h3Y" secondAttribute="centerX" id="R21-xz-z7A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8y3-Q3-KrC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0kb-O2-9oq"/>
