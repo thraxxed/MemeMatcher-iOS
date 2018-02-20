@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
         <array key="Helvetica.ttc">
             <string>Helvetica</string>
         </array>
@@ -123,41 +126,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-dq-p8E">
-                                <rect key="frame" x="67" y="254.5" width="240" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-4g-HJs">
+                                <rect key="frame" x="67.5" y="213" width="240" height="241"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZaN-AU-uXw">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="158"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="EAQ-P2-hF2" appends="YES" id="zhD-ma-zec"/>
+                                        </connections>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
+                                        <rect key="frame" x="10" y="136" width="220" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-JK-1DX">
+                                        <rect key="frame" x="57" y="174" width="126" height="33"/>
                                         <subviews>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="EAQ-P2-hF2" appends="YES" id="zhD-ma-zec"/>
-                                                </connections>
-                                            </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
-                                                <rect key="frame" x="0.0" y="128" width="240" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-4N-LwM">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="33"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                <state key="normal" title="Male"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRg-3G-Pd6">
+                                                <rect key="frame" x="65" y="0.0" width="61" height="33"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                                <state key="normal" title="Female"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
+                                        <rect key="frame" x="81.5" y="215" width="77" height="26"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                        <state key="normal" title="Update Profile"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jh1-XT-LON" appends="YES" id="aMA-nh-r5p"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="iJV-2i-qCI" secondAttribute="trailing" constant="10" id="ONK-p6-IWn"/>
+                                    <constraint firstItem="iJV-2i-qCI" firstAttribute="leading" secondItem="rNe-4g-HJs" secondAttribute="leading" constant="10" id="tb4-5u-stS"/>
+                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
-                                <rect key="frame" x="138" y="447" width="99" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-EK-KmX">
+                                <rect key="frame" x="65" y="30" width="244" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <state key="normal" title="Update Profile"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="jh1-XT-LON" appends="YES" id="aMA-nh-r5p"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.80784313730000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rNe-4g-HJs" firstAttribute="centerX" secondItem="UCK-dc-h3Y" secondAttribute="centerX" id="Aif-Kb-m8a"/>
+                            <constraint firstItem="rNe-4g-HJs" firstAttribute="centerY" secondItem="UCK-dc-h3Y" secondAttribute="centerY" id="F5d-RQ-J4o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8y3-Q3-KrC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0kb-O2-9oq"/>
@@ -179,7 +206,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-559" y="727"/>
+            <point key="canvasLocation" x="-559.20000000000005" y="726.38680659670172"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -396,7 +423,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="XrI-LL-6XX"/>
         <segue reference="GAq-re-BFO"/>
-        <segue reference="VD8-QX-R9Z"/>
+        <segue reference="bpj-3x-Md2"/>
         <segue reference="iI7-L5-ec4"/>
     </inferredMetricsTieBreakers>
 </document>
