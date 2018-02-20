@@ -18,11 +18,13 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var ageSlider: UISlider!
     @IBOutlet weak var ageLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+//        ageSlider.value = MemeMatcher.currentUser.age
+        
         // Do any additional setup after loading the view.
     }
 
@@ -35,10 +37,12 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         let id: Int
         let picture: String
         let bio: String
-        init(id: Int, picture: String, bio: String) {
+        let age: Int
+        init(id: Int, picture: String, bio: String, age: Int) {
             self.id = id
             self.picture = picture
             self.bio = bio
+            self.age = age
         }
     }
     
@@ -116,7 +120,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func updateUserProfile(_ sender: UITapGestureRecognizer) {
-        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr, bio: userBioField.text!)
+        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr, bio: userBioField.text!, age: Int(ageLabel.text!)!)
         patchUser(editUser: editedUser) { (error) in
             if let error = error {
                 fatalError(error.localizedDescription)
