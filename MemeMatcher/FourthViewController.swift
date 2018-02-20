@@ -12,6 +12,9 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     //MARK Properties:
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var submitUpdate: UIButton!
+    @IBOutlet weak var userBioField: UITextField!
+    @IBOutlet weak var userGenderMale: UIStackView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +31,11 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     struct EditUser: Codable {
         let id: Int
         let picture: String
-        init(id: Int, picture: String) {
+        let bio: String
+        init(id: Int, picture: String, bio: String) {
             self.id = id
             self.picture = picture
+            self.bio = bio
         }
     }
     
@@ -108,14 +113,13 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func updateUserProfile(_ sender: UITapGestureRecognizer) {
-        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr)
+        let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr, bio: userBioField.text!)
         patchUser(editUser: editedUser) { (error) in
             if let error = error {
                 fatalError(error.localizedDescription)
             }
         }
     }
-    
     
 
 }

@@ -179,6 +179,10 @@
                                 <color key="textColor" red="1" green="0.80784313730000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="18" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-8T-szJ">
+                                <rect key="frame" x="128" y="462" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -191,6 +195,8 @@
                     <connections>
                         <outlet property="photoImageView" destination="Py2-Q9-KtS" id="tWb-eB-j3W"/>
                         <outlet property="submitUpdate" destination="1aA-xn-HWP" id="Cqt-UZ-gBo"/>
+                        <outlet property="userBioField" destination="iJV-2i-qCI" id="UJ8-eN-Byd"/>
+                        <outlet property="userGenderMale" destination="rNe-4g-HJs" id="5EC-B5-id5"/>
                         <segue destination="8rJ-Kc-sve" kind="show" identifier="successfulUserUpdate" id="GAq-re-BFO"/>
                     </connections>
                 </viewController>
