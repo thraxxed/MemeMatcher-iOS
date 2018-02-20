@@ -144,4 +144,9 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         currentGender = "M"
     }
     
+    @IBAction func genderFemale(_ sender: UITapGestureRecognizer) {
+        currentGender = "F"
+    }
+    
+    
 }
