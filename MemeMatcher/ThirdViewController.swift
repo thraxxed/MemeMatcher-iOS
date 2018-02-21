@@ -143,16 +143,18 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
                 let picture_url = (currentUserJSON! as AnyObject)["picture_url"]!!
                 let age = (currentUserJSON! as AnyObject)["age"]!!
                 let gender = (currentUserJSON! as AnyObject)["gender"]!!
+                let bio = (currentUserJSON! as AnyObject)["bio"]!!
                 
                 let username2 = username as! String
                 let id2 = id as! Int
                 let picture_url2 = picture_url as! String
                 let age2 = age as! Int
                 let gender2 = gender as! String
+                let bio2 = bio as! String
                 
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
                                                            latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude, age: age2,
-                                                        gender:gender2)
+                                                           gender:gender2, bio: bio2)
                 let editedUser = EditUser(id: id2)
                 self.patchUser(editUser: editedUser) { (error) in
                     if let error = error {
