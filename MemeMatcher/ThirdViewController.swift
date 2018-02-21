@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var signinNameTextField: UITextField!
     @IBOutlet weak var signinPasswordTextField: UITextField!
     
+    var locManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // CALCULATE LOCATION
+        locManager.requestWhenInUseAuthorization()
+        locManager.requestAlwaysAuthorization()
+        
+        var currentLocation: CLLocation!
+        
+        currentLocation = locManager.location
+        
+        MemeMatcher.longitude = currentLocation.coordinate.longitude
+        MemeMatcher.latitude = currentLocation.coordinate.latitude
 
         // Do any additional setup after loading the view.
     }
@@ -30,9 +44,57 @@ class ThirdViewController: UIViewController {
         let password: String
     }
     
+    struct EditUser: Codable {
+        let id: Int
+        let longitude: Double
+        let latitude: Double
+        init(id: Int) {
+            self.id = id
+            self.latitude = MemeMatcher.latitude
+            self.longitude = MemeMatcher.longitude
+        }
+    }
+    
     enum Result<Value> {
         case success(Value)
         case failure(Error)
+    }
+    
+    func patchUser(editUser: EditUser, completion:((Error?) -> Void)?) {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "meme-matcher.herokuapp.com"
+        urlComponents.path = "/api/users/\(MemeMatcher.currentUser.id)"
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        
+        
+        let encoder = JSONEncoder()
+        do {
+            let jsonData = try encoder.encode(editUser)
+            request.httpBody = jsonData
+            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+        } catch {
+            completion?(error)
+        }
+        
+        // Create and run a URLSession data task with our JSON encoded POST request
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+            guard responseError == nil else {
+                completion?(responseError!)
+                return
+            }
+        }
+        task.resume()
     }
     
     func submitUser(user: User, completion:((Error?) -> Void)?) {
@@ -91,6 +153,12 @@ class ThirdViewController: UIViewController {
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
                                                            latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude, age: age2,
                                                         gender:gender2)
+                let editedUser = EditUser(id: id2)
+                self.patchUser(editUser: editedUser) { (error) in
+                    if let error = error {
+                        fatalError(error.localizedDescription)
+                    }
+                }
                 
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignIn", sender: self)
