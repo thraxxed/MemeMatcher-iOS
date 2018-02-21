@@ -169,15 +169,15 @@ extension UIImage {
         guard let imageData = UIImagePNGRepresentation(self) else { return nil }
         
         var resizingImage = self
-        var imageSizeKB = Double(imageData.count) / 1000.0 // ! Or devide for 1024 if you need KB but not kB
+        var imageSizeKB = Double(imageData.count) / 1000.0
         
-        while imageSizeKB > 1000 { // ! Or use 1024 if you need KB but not kB
+        while imageSizeKB > 1000 { 
             guard let resizedImage = resizingImage.resized(withPercentage: 0.9),
                 let imageData = UIImagePNGRepresentation(resizedImage)
                 else { return nil }
             
             resizingImage = resizedImage
-            imageSizeKB = Double(imageData.count) / 1000.0 // ! Or devide for 1024 if you need KB but not kB
+            imageSizeKB = Double(imageData.count) / 1000.0
         }
         
         return resizingImage
