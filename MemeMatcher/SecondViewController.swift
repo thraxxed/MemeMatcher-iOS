@@ -184,6 +184,12 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //Mark: Actions
     
+    @IBAction func viewMatches(_ sender: UITapGestureRecognizer) {
+        DispatchQueue.main.async(){
+            self.performSegue(withIdentifier: "viewMatches", sender: self)
+        }
+    }
+    
     @IBAction func viewUserProfile(_ sender: UITapGestureRecognizer) {
         DispatchQueue.main.async(){
             self.performSegue(withIdentifier: "updateProfile", sender: self)

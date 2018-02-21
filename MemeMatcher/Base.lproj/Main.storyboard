@@ -128,10 +128,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-4g-HJs">
-                                <rect key="frame" x="-148.5" y="110" width="672" height="448"/>
+                                <rect key="frame" x="-156.5" y="110" width="688" height="448"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
-                                        <rect key="frame" x="216" y="0.0" width="240" height="240"/>
+                                        <rect key="frame" x="224" y="0.0" width="240" height="240"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Py2-Q9-KtS" secondAttribute="height" multiplier="1:1" id="CoZ-UT-JKx"/>
@@ -144,31 +144,31 @@
                                         </connections>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
-                                        <rect key="frame" x="10" y="248" width="652" height="30"/>
+                                        <rect key="frame" x="10" y="248" width="668" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-GS-ls5">
-                                        <rect key="frame" x="318.5" y="286" width="35" height="20.5"/>
+                                        <rect key="frame" x="326.5" y="286" width="35" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="18" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-8T-szJ">
-                                        <rect key="frame" x="51" y="314.5" width="570" height="31"/>
+                                        <rect key="frame" x="51" y="314.5" width="586" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="L0k-N2-wWv" eventType="valueChanged" id="5cA-XM-RaT"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-kq-LnM">
-                                        <rect key="frame" x="327" y="352.5" width="18.5" height="20.5"/>
+                                        <rect key="frame" x="335" y="352.5" width="18.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-JK-1DX">
-                                        <rect key="frame" x="273" y="381" width="126" height="33"/>
+                                        <rect key="frame" x="281" y="381" width="126" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-4N-LwM">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="33"/>
@@ -191,7 +191,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
-                                        <rect key="frame" x="297.5" y="422" width="77" height="26"/>
+                                        <rect key="frame" x="305.5" y="422" width="77" height="26"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                         <state key="normal" title="Update Profile"/>
@@ -304,6 +304,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdh-QE-fpy">
                                 <rect key="frame" x="321" y="37" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OYu-Ae-xAt" appends="YES" id="NBD-xj-8Ba"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OH-Pf-E9k">
                                 <rect key="frame" x="244" y="555" width="30" height="30"/>
@@ -328,6 +332,7 @@
                         <outlet property="memeImage" destination="dDm-sO-G1A" id="jtW-Ru-yuo"/>
                         <outlet property="userChatButton" destination="wdh-QE-fpy" id="yea-y6-lWP"/>
                         <outlet property="userProfileButton" destination="VVJ-kG-EGT" id="3gV-ES-bFP"/>
+                        <segue destination="i27-bs-tQD" kind="show" identifier="viewMatches" id="WLX-bW-ciF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -345,6 +350,11 @@
                     <connections>
                         <action selector="viewUserProfile:" destination="8rJ-Kc-sve" id="sY1-0y-MQR"/>
                         <segue destination="L0k-N2-wWv" kind="show" identifier="updateProfile" id="VD8-QX-R9Z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="OYu-Ae-xAt">
+                    <connections>
+                        <action selector="viewMatches:" destination="8rJ-Kc-sve" id="yer-ov-IOl"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -489,8 +499,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ogc-Bd-AoV"/>
+        <segue reference="WLX-bW-ciF"/>
         <segue reference="lzU-1b-eKA"/>
-        <segue reference="oYs-DP-pHe"/>
+        <segue reference="VD8-QX-R9Z"/>
         <segue reference="u7Y-xg-7CH"/>
     </inferredMetricsTieBreakers>
 </document>
