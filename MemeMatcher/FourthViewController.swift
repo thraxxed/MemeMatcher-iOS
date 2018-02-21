@@ -29,6 +29,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         ageSlider.value = Float(MemeMatcher.currentUser.age)
         ageLabel.text = "\(Int(ageSlider.value))"
+        userBioField.text = MemeMatcher.currentUser.bio
         // Do any additional setup after loading the view.
     }
 
