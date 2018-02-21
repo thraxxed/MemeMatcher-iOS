@@ -32,6 +32,14 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         userBioField.text = MemeMatcher.currentUser.bio
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        userBioField.text = MemeMatcher.currentUser.bio
+        ageSlider.value = Float(MemeMatcher.currentUser.age)
+        ageLabel.text = "\(Int(ageSlider.value))"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -131,6 +139,8 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func updateUserProfile(_ sender: UITapGestureRecognizer) {
+        MemeMatcher.currentUser.bio = userBioField.text!
+        MemeMatcher.currentUser.age = Int(ageLabel.text!)!
         let editedUser = EditUser(id: MemeMatcher.currentUser.id, picture: imageStr, bio: userBioField.text!, age: Int(ageLabel.text!)!, gender: currentGender)
         patchUser(editUser: editedUser) { (error) in
             if let error = error {
