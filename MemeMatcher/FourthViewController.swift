@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class FourthViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK Properties:
     @IBOutlet weak var photoImageView: UIImageView!
@@ -61,15 +63,17 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         // Set photoImageView to display the selected image.
-        photoImageView.image = selectedImage
+        photoImageView.image = selectedImage.resizedTo1MB()
         
-        let imageData:Data = UIImagePNGRepresentation(selectedImage)!
+        let imageData:Data = UIImagePNGRepresentation(photoImageView.image!)!
         imageStr = imageData.base64EncodedString()
         
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
+    
+    
     
     var imageStr = ""
     
@@ -149,4 +153,33 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     
+}
+
+extension UIImage {
+    
+    func resized(withPercentage percentage: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: size.width * percentage, height: size.height * percentage)
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    
+    func resizedTo1MB() -> UIImage? {
+        guard let imageData = UIImagePNGRepresentation(self) else { return nil }
+        
+        var resizingImage = self
+        var imageSizeKB = Double(imageData.count) / 1000.0 // ! Or devide for 1024 if you need KB but not kB
+        
+        while imageSizeKB > 1000 { // ! Or use 1024 if you need KB but not kB
+            guard let resizedImage = resizingImage.resized(withPercentage: 0.9),
+                let imageData = UIImagePNGRepresentation(resizedImage)
+                else { return nil }
+            
+            resizingImage = resizedImage
+            imageSizeKB = Double(imageData.count) / 1000.0 // ! Or devide for 1024 if you need KB but not kB
+        }
+        
+        return resizingImage
+    }
 }
