@@ -8,6 +8,60 @@
 
 import UIKit
 
+struct Match: Codable {
+    let id: Int
+    let username: String
+    let bio: String
+    let age: Int
+    let picture_url: String
+}
+
+var matches = [Match]()
+
+enum Result<Value> {
+    case success(Value)
+    case failure(Error)
+}
+
+func getMatches(for id: Int, completion: ((Result<[Match]>) -> Void)?) {
+    var urlComponents = URLComponents()
+    urlComponents.scheme = "https"
+    urlComponents.host = "meme-matcher.herokuapp.com"
+    urlComponents.path = "/api/users"
+    
+    guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+    
+    var headers = request.allHTTPHeaderFields ?? [:]
+    headers["Content-Type"] = "application/json"
+    request.allHTTPHeaderFields = headers
+    
+    let config = URLSessionConfiguration.default
+    let session = URLSession(configuration: config)
+    let task = session.dataTask(with: request) { (responseData, response, responseError) in
+        DispatchQueue.main.async {
+            if let error = responseError {
+                completion?(.failure(error))
+            } else if let jsonData = responseData {
+                let decoder = JSONDecoder()
+                do {
+                    let matches = try decoder.decode([Match].self, from: jsonData)
+                    completion?(.success(matches))
+                } catch {
+                    completion?(.failure(error))
+                }
+            } else {
+                let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
+                completion?(.failure(error))
+            }
+        }
+    }
+    
+    task.resume()
+}
+
 class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Properties
@@ -185,8 +239,18 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     //Mark: Actions
     
     @IBAction func viewMatches(_ sender: UITapGestureRecognizer) {
-        DispatchQueue.main.async(){
-            self.performSegue(withIdentifier: "viewMatches", sender: self)
+        getMatches(for: 1) { (result) in
+            switch result {
+            case .success(let matches):
+                MemeMatcher.matches = matches
+                print(MemeMatcher.matches)
+                DispatchQueue.main.async(){
+                    self.performSegue(withIdentifier: "viewMatches", sender: self)
+                }
+            case .failure(let error):
+                print(error)
+                fatalError("error: \(error.localizedDescription)")
+            }
         }
     }
     

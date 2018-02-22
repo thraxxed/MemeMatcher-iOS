@@ -17,6 +17,9 @@ class MatchTableViewController: UITableViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("zzz")
+        print(MemeMatcher.matches)
+        
         let dummyMatch: Match = Match(id: -1, username: "ddd", bio: "", age: -1, picture_url: "")
         
         matches.append(dummyMatch)
@@ -57,8 +60,6 @@ class MatchTableViewController: UITableViewController, UITextFieldDelegate  {
     }
     
     var matches = [Match]()
-    
-    
     
     enum Result<Value> {
         case success(Value)

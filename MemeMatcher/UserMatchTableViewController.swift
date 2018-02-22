@@ -11,7 +11,10 @@ import UIKit
 class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("we're in view did load")
+//        print("we're in view did load")
+        
+        print("zzz")
+        print(MemeMatcher.matches)
         
         let dummyMatch: Match = Match(id: -1, username: "ddd", bio: "", age: -1, picture_url: "")
         
@@ -27,8 +30,8 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
             print("we're getting matches")
             switch result {
             case .success(let matches):
-                self.matches = matches
-                print(self.matches)
+                MemeMatcher.matches = matches
+                print(MemeMatcher.matches)
                 
             case .failure(let error):
                 print(error )
@@ -46,15 +49,15 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    struct Match: Codable {
-        let id: Int
-        let username: String
-        let bio: String
-        let age: Int
-        let picture_url: String
-    }
-    
-    var matches = [Match]()
+//    struct Match: Codable {
+//        let id: Int
+//        let username: String
+//        let bio: String
+//        let age: Int
+//        let picture_url: String
+//    }
+//
+//    var matches = [Match]()
     
     
     
@@ -129,8 +132,8 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         // #warning Incomplete implementation, return the number of rows
         print("yo")
         print(matches.count)
-//        return matches.count
-        return 1
+        return matches.count
+//        return 1
     }
     
     let cellIdentifier = "UserMatches"
@@ -140,7 +143,7 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
             fatalError("The dequeued cell is not an instance of UserMatches.")
         }
         
-        let match = matches[indexPath.row]
+        let match = MemeMatcher.matches[indexPath.row]
         print("we're in the cellidntifier function")
         cell.userMatcherinos.text = match.username
         
