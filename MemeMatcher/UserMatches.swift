@@ -17,6 +17,8 @@ class UserMatches: UITableViewCell {
     
     @IBOutlet weak var userAgerino: UILabel!
     
+    @IBOutlet weak var userImagerino: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

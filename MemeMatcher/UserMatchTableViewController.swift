@@ -51,6 +51,7 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         case success(Value)
         case failure(Error)
     }
+    var matchIndex = 0
     
     func getMatches(for id: Int, completion: ((Result<[Match]>) -> Void)?) {
         var urlComponents = URLComponents()
@@ -133,10 +134,36 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         print("we're in the cellidntifier function")
         cell.userMatcherinos.text = match.username
         cell.userAgerino.text = String(match.age)
+//        if (matchIndex >= matches.count-1) {
+//            return "shit"
+//        }
+        matchIndex += 1
+        let url = URL(string: matches[0].picture_url)
+        
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                cell.userImagerino.image = UIImage(data: data!)
+            }
+        }
         
         return cell
     }
     
+//    func loadMatchImage() {
+//        if (matchIndex >= matches.count-1) {
+//            return
+//        }
+//        matchIndex += 1
+//        let url = URL(string: matches[self.matchIndex].picture_url)
+//
+//        DispatchQueue.global().async {
+//            let data = try? Data(contentsOf: url!)
+//            DispatchQueue.main.async {
+//                cell.userImagerino.image = UIImage(data: data!)
+//            }
+//        }
+//    }
     
     /*
      // Override to support conditional editing of the table view.
