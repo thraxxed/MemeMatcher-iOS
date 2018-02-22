@@ -18,8 +18,6 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         
 //        let dummyMatch: Match = Match(id: -1, username: "ddd", bio: "", age: -1, picture_url: "")
         
-        matches.append(dummyMatch)
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
