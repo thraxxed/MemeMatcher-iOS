@@ -146,6 +146,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                                                            latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude,
                                                            age: age2,
                                                            gender: gender2, bio: bio2)
+                
+                getMatches(for: 1) { (result) in
+                    switch result {
+                    case .success(let matches):
+                        MemeMatcher.matches = matches
+                        print(MemeMatcher.matches)
+                    case .failure(let error):
+                        print(error)
+                        fatalError("error: \(error.localizedDescription)")
+                    }
+                }
             
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "successfulSignUp", sender: self)

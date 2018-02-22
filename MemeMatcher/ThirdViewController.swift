@@ -155,6 +155,18 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
                                                            latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude, age: age2,
                                                            gender:gender2, bio: bio2)
+                
+                getMatches(for: 1) { (result) in
+                    switch result {
+                    case .success(let matches):
+                        MemeMatcher.matches = matches
+                        print(MemeMatcher.matches)
+                    case .failure(let error):
+                        print(error)
+                        fatalError("error: \(error.localizedDescription)")
+                    }
+                }
+                
                 let editedUser = EditUser(id: id2)
                 self.patchUser(editUser: editedUser) { (error) in
                     if let error = error {
