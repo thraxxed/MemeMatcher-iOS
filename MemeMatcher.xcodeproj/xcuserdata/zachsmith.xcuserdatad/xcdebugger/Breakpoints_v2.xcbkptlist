@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMatcher/UserMatches.swift"
+            timestampString = "540959769.884576"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "UserMatches"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.UserMatches.userMatches.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zachsmith/Documents/flex_ios/MemeMatcher/UserMatches.swift"
+                  timestampString = "540959260.128772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.UserMatches.userMatches.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zachsmith/Documents/flex_ios/MemeMatcher/UserMatches.swift"
+                  timestampString = "540959260.135967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.UserMatches.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; MemeMatcher.UserMatches"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zachsmith/Documents/flex_ios/MemeMatcher/UserMatches.swift"
+                  timestampString = "540959260.137918"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "242">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMatcher.UserMatches.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;MemeMatcher.UserMatches&gt;"
+                  moduleName = "MemeMatcher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zachsmith/Documents/flex_ios/MemeMatcher/UserMatches.swift"
+                  timestampString = "540959260.140155"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

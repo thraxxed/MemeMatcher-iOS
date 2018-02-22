@@ -1,5 +1,5 @@
 //
-//  MatchTableViewCell.swift
+//  UserMatches.swift
 //  MemeMatcher
 //
 //  Created by Zach Smith on 2/21/18.
@@ -8,17 +8,13 @@
 
 import UIKit
 
-class MatchTableViewCell: UITableViewCell {
-    
+class UserMatches: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var matchUsername: UILabel!
     
+    @IBOutlet weak var userMatcherinos: UILabel!
+    @IBOutlet weak var userMatches: UIView!
     
-    
-
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

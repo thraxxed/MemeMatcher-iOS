@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MatchTableViewController: UITableViewController, UITextFieldDelegate {
+class MatchTableViewController: UITableViewController, UITextFieldDelegate  {
 
     
     //MARK Properties:
@@ -134,16 +134,16 @@ class MatchTableViewController: UITableViewController, UITextFieldDelegate {
         return matches.count
     }
 
-    let cellIdentifier = "MatchTableViewCell"
+    let cellIdentifier = "UserMatches"
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MatchTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UserMatches  else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         
         let match = matches[indexPath.row]
         print("we're in the cellidntifier function")
-        cell.matchUsername.text = match.username
+        cell.userMatcherinos.text = match.username
 
         return cell
     }
