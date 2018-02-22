@@ -18,6 +18,91 @@ class MatchTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        getMatches(for: 1) { (result) in
+            switch result {
+            case .success(let matches):
+                self.matches = matches
+                print(self.matches)
+                
+            case .failure(let error):
+                print(error )
+                fatalError("error: \(error.localizedDescription)")
+            }
+        }
+        
+    }
+    
+    struct User: Codable {
+        let id: Int
+        init(id: Int) {
+            self.id = id
+        }
+    }
+    
+    struct Match: Codable {
+        let id: Int
+        let username: String
+        let bio: String
+        let age: Int
+        let picture_url: String
+    }
+    
+    var matches = [Match]()
+    
+    enum Result<Value> {
+        case success(Value)
+        case failure(Error)
+    }
+    
+    func getMatches(for id: Int, completion: ((Result<[Match]>) -> Void)?) {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "meme-matcher.herokuapp.com"
+        urlComponents.path = "/api/users"
+        
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+//        let user = User(id: MemeMatcher.currentUser.id)
+        
+//        let encoder = JSONEncoder()
+//        do {
+//            let jsonData = try encoder.encode(user)
+//            request.httpBody = jsonData
+//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+//        } catch {
+//            completion?(error as! MatchTableViewController.Result<[MatchTableViewController.Match]>)
+//        }
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+            DispatchQueue.main.async {
+                if let error = responseError {
+                    completion?(.failure(error))
+                } else if let jsonData = responseData {
+                    let decoder = JSONDecoder()
+                    do {
+                        let matches = try decoder.decode([Match].self, from: jsonData)
+                        completion?(.success(matches))
+                    } catch {
+                        completion?(.failure(error))
+                    }
+                } else {
+                    let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
+                    completion?(.failure(error))
+                }
+            }
+        }
+        
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
