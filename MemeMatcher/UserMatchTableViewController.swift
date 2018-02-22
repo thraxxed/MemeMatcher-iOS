@@ -132,6 +132,7 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         let match = MemeMatcher.matches[indexPath.row]
         print("we're in the cellidntifier function")
         cell.userMatcherinos.text = match.username
+        cell.userAgerino.text = String(match.age)
         
         return cell
     }
