@@ -138,7 +138,11 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
 //            return "shit"
 //        }
         matchIndex += 1
-        let url = URL(string: matches[0].picture_url)
+        let shit = "https:" + matches[0].picture_url
+        print(shit)
+        let url = URL(string: shit)
+        
+
         
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
