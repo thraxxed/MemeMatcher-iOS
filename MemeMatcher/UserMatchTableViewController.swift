@@ -16,7 +16,7 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         print("zzz")
         print(MemeMatcher.matches)
         
-        let dummyMatch: Match = Match(id: -1, username: "ddd", bio: "", age: -1, picture_url: "")
+//        let dummyMatch: Match = Match(id: -1, username: "ddd", bio: "", age: -1, picture_url: "")
         
         matches.append(dummyMatch)
         
