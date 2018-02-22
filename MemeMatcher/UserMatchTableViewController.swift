@@ -26,20 +26,6 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        getMatches(for: 1) { (result) in
-            print("we're getting matches")
-            switch result {
-            case .success(let matches):
-                MemeMatcher.matches = matches
-                print(MemeMatcher.matches)
-                
-            case .failure(let error):
-                print(error )
-                fatalError("error: \(error.localizedDescription)")
-                
-            }
-        }
-        
     }
     
     struct User: Codable {

@@ -100,13 +100,14 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
             case .success(let memes):
                 self.memes = memes
                 print(self.memes)
-                
-                let url = URL(string: self.memes[self.memeIndex].image_url)
-                
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url!)
-                    DispatchQueue.main.async {
-                        self.memeImage.image = UIImage(data: data!)
+                if (memes.count > 0) {
+                    let url = URL(string: self.memes[self.memeIndex].image_url)
+                    
+                    DispatchQueue.global().async {
+                        let data = try? Data(contentsOf: url!)
+                        DispatchQueue.main.async {
+                            self.memeImage.image = UIImage(data: data!)
+                        }
                     }
                 }
 
