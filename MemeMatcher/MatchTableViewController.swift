@@ -8,8 +8,12 @@
 
 import UIKit
 
-class MatchTableViewController: UITableViewController {
+class MatchTableViewController: UITableViewController, UITextFieldDelegate {
 
+    
+    //MARK Properties:
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -119,18 +123,22 @@ class MatchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return matches.count
     }
 
-    /*
+    let cellIdentifier = "MatchTableViewCell"
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MatchTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+        
+        let match = matches[indexPath.row]
+        print("we're in the cellidntifier function")
+        cell.matchUsername.text = match.username
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
