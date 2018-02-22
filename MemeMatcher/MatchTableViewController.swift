@@ -16,6 +16,10 @@ class MatchTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let dummyMatch: Match = Match(id: -1, username: "ddd", bio: "", age: -1, picture_url: "")
+        
+        matches.append(dummyMatch)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,6 +57,8 @@ class MatchTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     var matches = [Match]()
+    
+    
     
     enum Result<Value> {
         case success(Value)
@@ -118,15 +124,18 @@ class MatchTableViewController: UITableViewController, UITextFieldDelegate {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print("yo")
+        print(matches.count)
         return matches.count
     }
 
     let cellIdentifier = "MatchTableViewCell"
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MatchTableViewCell  else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
