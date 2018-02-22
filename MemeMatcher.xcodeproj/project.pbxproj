@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		36295333203BACD5009C2E5D /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36295332203BACD5009C2E5D /* FourthViewController.swift */; };
-		3655F383203DED5600CD26F0 /* MatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655F382203DED5600CD26F0 /* MatchTableViewController.swift */; };
-		3655F385203E49B000CD26F0 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655F384203E49B000CD26F0 /* MatchTableViewCell.swift */; };
 		3655F387203E5C0B00CD26F0 /* UserMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655F386203E5C0B00CD26F0 /* UserMatches.swift */; };
 		3655F389203E5E1F00CD26F0 /* UserMatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655F388203E5E1F00CD26F0 /* UserMatchTableViewController.swift */; };
 		5D35508020391A0A00CC21F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35507F20391A0A00CC21F1 /* AppDelegate.swift */; };
@@ -40,8 +38,6 @@
 
 /* Begin PBXFileReference section */
 		36295332203BACD5009C2E5D /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		3655F382203DED5600CD26F0 /* MatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewController.swift; sourceTree = "<group>"; };
-		3655F384203E49B000CD26F0 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		3655F386203E5C0B00CD26F0 /* UserMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatches.swift; sourceTree = "<group>"; };
 		3655F388203E5E1F00CD26F0 /* UserMatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMatchTableViewController.swift; sourceTree = "<group>"; };
 		5D35507C20391A0A00CC21F1 /* MemeMatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,8 +106,6 @@
 				5D35508D20391A0A00CC21F1 /* Info.plist */,
 				F904865B203A5C3B00FCA1BB /* ThirdViewController.swift */,
 				36295332203BACD5009C2E5D /* FourthViewController.swift */,
-				3655F382203DED5600CD26F0 /* MatchTableViewController.swift */,
-				3655F384203E49B000CD26F0 /* MatchTableViewCell.swift */,
 				3655F386203E5C0B00CD26F0 /* UserMatches.swift */,
 				3655F388203E5E1F00CD26F0 /* UserMatchTableViewController.swift */,
 			);
@@ -247,9 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3655F387203E5C0B00CD26F0 /* UserMatches.swift in Sources */,
-				3655F385203E49B000CD26F0 /* MatchTableViewCell.swift in Sources */,
 				5D35508420391A0A00CC21F1 /* SecondViewController.swift in Sources */,
-				3655F383203DED5600CD26F0 /* MatchTableViewController.swift in Sources */,
 				5D35508020391A0A00CC21F1 /* AppDelegate.swift in Sources */,
 				F904865C203A5C3B00FCA1BB /* ThirdViewController.swift in Sources */,
 				3655F389203E5E1F00CD26F0 /* UserMatchTableViewController.swift in Sources */,
