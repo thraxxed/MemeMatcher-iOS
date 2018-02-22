@@ -134,14 +134,14 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         print("we're in the cellidntifier function")
         cell.userMatcherinos.text = match.username
         cell.userAgerino.text = String(match.age)
-//        if (matchIndex >= matches.count-1) {
-//            return "shit"
-//        }
-        matchIndex += 1
-        let shit = "https:" + matches[0].picture_url
+        if (matchIndex >= matches.count-1) {
+            return cell
+        }
+        
+        let shit = "https:" + matches[matchIndex].picture_url
         print(shit)
         let url = URL(string: shit)
-        
+        matchIndex += 1
 
         
         DispatchQueue.global().async {
