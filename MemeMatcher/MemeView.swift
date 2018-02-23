@@ -78,7 +78,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "heavyrainbackground")!)
+        
         
         memeImage.layer.borderWidth = 1.5
         memeImage.layer.borderColor = UIColor.white.cgColor

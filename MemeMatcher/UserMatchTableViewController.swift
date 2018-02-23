@@ -130,5 +130,18 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        switch (segue.identifier ?? "") {
+        case "chatSegue":
+            guard let selectedMatchCell = sender as? UserMatches else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            print(selectedMatchCell.userMatcherinos.text)
+        default:
+            return
+        }
+    }
 
 }
