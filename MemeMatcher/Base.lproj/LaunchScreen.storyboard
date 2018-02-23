@@ -23,25 +23,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hhw-CY-Zg6">
-                                <rect key="frame" x="98" y="235" width="178" height="198"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-rE-wmz">
+                                <rect key="frame" x="67.5" y="321.5" width="60" height="23"/>
+                                <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fJn-Xv-Lfr">
+                                <rect key="frame" x="102" y="248" width="170" height="170"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meme Matcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-rE-wmz">
-                                        <rect key="frame" x="0.0" y="0.0" width="178" height="28"/>
-                                        <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intrologin" translatesAutoresizingMaskIntoConstraints="NO" id="gCx-If-OoT">
-                                        <rect key="frame" x="0.0" y="28" width="178" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaG-qh-FXG">
+                                <rect key="frame" x="239" y="321.5" width="81.5" height="23"/>
+                                <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Hhw-CY-Zg6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Evt-dW-zYy"/>
-                            <constraint firstItem="Hhw-CY-Zg6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LcB-Kb-fxk"/>
+                            <constraint firstItem="fJn-Xv-Lfr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3Kt-5x-ei2"/>
+                            <constraint firstItem="oaG-qh-FXG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="GXC-iz-dM1"/>
+                            <constraint firstItem="fJn-Xv-Lfr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="N6j-rB-nf3"/>
+                            <constraint firstItem="oaG-qh-FXG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="92" id="bhn-an-Gqd"/>
+                            <constraint firstItem="qhV-rE-wmz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="epy-ib-z7U"/>
+                            <constraint firstItem="qhV-rE-wmz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-90" id="sPf-bc-MBv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

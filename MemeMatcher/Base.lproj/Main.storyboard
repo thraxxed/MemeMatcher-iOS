@@ -18,6 +18,9 @@
         <array key="SanFranciscoDisplay-Regular.otf">
             <string>SanFranciscoDisplay-Regular</string>
         </array>
+        <array key="VitroBold.ttf">
+            <string>Vitro-Bold</string>
+        </array>
         <array key="VitroMedium.ttf">
             <string>Vitro-Medium</string>
         </array>
@@ -31,15 +34,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyX-ri-tHV">
-                                <rect key="frame" x="65" y="30" width="244" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyX-ri-tHV">
+                                <rect key="frame" x="112" y="48" width="150.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="18"/>
-                                <color key="textColor" red="1" green="0.80784313725490198" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.6588235294117647" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HXm-nD-6Z0">
-                                <rect key="frame" x="0.0" y="237" width="375" height="193"/>
+                                <rect key="frame" x="0.0" y="277" width="375" height="113"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuQ-fJ-Urh">
                                         <rect key="frame" x="147.5" y="0.0" width="80" height="29"/>
@@ -59,8 +61,19 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="J1C-PI-RJa" secondAttribute="trailing" constant="50" id="3ta-bf-qev"/>
+                                    <constraint firstAttribute="trailing" secondItem="i2J-Ke-v76" secondAttribute="trailing" constant="50" id="3vn-bK-ymB"/>
+                                    <constraint firstItem="i2J-Ke-v76" firstAttribute="leading" secondItem="HXm-nD-6Z0" secondAttribute="leading" constant="50" id="Px2-FR-BLb"/>
+                                    <constraint firstItem="J1C-PI-RJa" firstAttribute="leading" secondItem="HXm-nD-6Z0" secondAttribute="leading" constant="50" id="uWi-Qo-OwY"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="TJ0-EN-pNb">
+                                <rect key="frame" x="133" y="394" width="109" height="49"/>
+                                <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnn-Av-Kfv">
-                                        <rect key="frame" x="134.5" y="125" width="106" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="109" height="32"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
                                         <state key="normal" title="Create Account"/>
@@ -69,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYx-Qq-YMC">
-                                        <rect key="frame" x="133" y="169" width="109" height="24"/>
+                                        <rect key="frame" x="0.0" y="25" width="109" height="24"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="10"/>
                                         <state key="normal" title="Already have an account?">
@@ -80,18 +93,16 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="J1C-PI-RJa" secondAttribute="trailing" constant="50" id="3ta-bf-qev"/>
-                                    <constraint firstAttribute="trailing" secondItem="i2J-Ke-v76" secondAttribute="trailing" constant="50" id="3vn-bK-ymB"/>
-                                    <constraint firstItem="i2J-Ke-v76" firstAttribute="leading" secondItem="HXm-nD-6Z0" secondAttribute="leading" constant="50" id="Px2-FR-BLb"/>
-                                    <constraint firstItem="J1C-PI-RJa" firstAttribute="leading" secondItem="HXm-nD-6Z0" secondAttribute="leading" constant="50" id="uWi-Qo-OwY"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cyX-ri-tHV" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="0n9-K0-ANu"/>
+                            <constraint firstItem="cyX-ri-tHV" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-275" id="3O4-Ud-gNW"/>
                             <constraint firstItem="HXm-nD-6Z0" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="8DQ-fE-I4D"/>
                             <constraint firstItem="HXm-nD-6Z0" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="S5l-5u-gFB"/>
+                            <constraint firstItem="TJ0-EN-pNb" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="hb3-Tb-xga"/>
+                            <constraint firstItem="TJ0-EN-pNb" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="85" id="kht-he-rZu"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="HXm-nD-6Z0" secondAttribute="trailing" id="pWa-bl-UdJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -115,7 +126,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1615" y="-200"/>
+            <point key="canvasLocation" x="-2359" y="-296"/>
         </scene>
         <!--Item-->
         <scene sceneID="Mj1-w9-Yoi">
@@ -126,10 +137,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-4g-HJs">
-                                <rect key="frame" x="-368.5" y="108.5" width="1112" height="450"/>
+                                <rect key="frame" x="-494.5" y="108.5" width="1364" height="450"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
-                                        <rect key="frame" x="436" y="0.0" width="240" height="240"/>
+                                        <rect key="frame" x="562" y="0.0" width="240" height="240"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Py2-Q9-KtS" secondAttribute="height" multiplier="1:1" id="CoZ-UT-JKx"/>
@@ -148,31 +159,31 @@
                                         </connections>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
-                                        <rect key="frame" x="10" y="248" width="1092" height="30"/>
+                                        <rect key="frame" x="10" y="248" width="1344" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-GS-ls5">
-                                        <rect key="frame" x="539.5" y="286" width="33" height="20.5"/>
+                                        <rect key="frame" x="665.5" y="286" width="33" height="20.5"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="18" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-8T-szJ">
-                                        <rect key="frame" x="51" y="314.5" width="1010" height="31"/>
+                                        <rect key="frame" x="51" y="314.5" width="1262" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="L0k-N2-wWv" eventType="valueChanged" id="5cA-XM-RaT"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-kq-LnM">
-                                        <rect key="frame" x="547" y="352.5" width="18.5" height="20.5"/>
+                                        <rect key="frame" x="673" y="352.5" width="18.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-JK-1DX">
-                                        <rect key="frame" x="496.5" y="381" width="119" height="34"/>
+                                        <rect key="frame" x="622.5" y="381" width="119" height="34"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-4N-LwM">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="34"/>
@@ -195,7 +206,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
-                                        <rect key="frame" x="519" y="423" width="74" height="27"/>
+                                        <rect key="frame" x="645" y="423" width="74" height="27"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="12"/>
                                         <state key="normal" title="Update Profile"/>
@@ -211,11 +222,10 @@
                                     <constraint firstItem="y9i-8T-szJ" firstAttribute="leading" secondItem="rNe-4g-HJs" secondAttribute="leading" constant="53" id="qqz-5A-lz1"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-EK-KmX">
-                                <rect key="frame" x="65" y="30" width="244" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-EK-KmX">
+                                <rect key="frame" x="112" y="48" width="150.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="18"/>
-                                <color key="textColor" red="1" green="0.80784313730000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.6588235294117647" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
@@ -223,6 +233,8 @@
                         <constraints>
                             <constraint firstItem="rNe-4g-HJs" firstAttribute="centerX" secondItem="UCK-dc-h3Y" secondAttribute="centerX" id="Aif-Kb-m8a"/>
                             <constraint firstItem="rNe-4g-HJs" firstAttribute="centerY" secondItem="UCK-dc-h3Y" secondAttribute="centerY" id="F5d-RQ-J4o"/>
+                            <constraint firstItem="cGs-EK-KmX" firstAttribute="centerY" secondItem="UCK-dc-h3Y" secondAttribute="centerY" constant="-275" id="QNw-6Z-1ZB"/>
+                            <constraint firstItem="cGs-EK-KmX" firstAttribute="centerX" secondItem="UCK-dc-h3Y" secondAttribute="centerX" id="yX0-im-ZgM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8y3-Q3-KrC"/>
                     </view>
@@ -260,7 +272,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1615" y="555"/>
+            <point key="canvasLocation" x="-2359" y="627"/>
         </scene>
         <!--Matches-->
         <scene sceneID="kXf-5n-pBH">
@@ -338,7 +350,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwh-K5-HfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129" y="555"/>
+            <point key="canvasLocation" x="-873" y="627"/>
         </scene>
         <!--Chat View-->
         <scene sceneID="sK4-cK-nYb">
@@ -362,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxg-Qr-KmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589.60000000000002" y="554.57271364317842"/>
+            <point key="canvasLocation" x="-138" y="627"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -380,11 +392,10 @@
                                     <action selector="dislikeMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wqN-zr-Ncb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ws-V7-L4N">
-                                <rect key="frame" x="65" y="30" width="244" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ws-V7-L4N">
+                                <rect key="frame" x="112" y="48" width="150.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="18"/>
-                                <color key="textColor" red="1" green="0.80784313730000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.6588235294117647" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="dDm-sO-G1A">
@@ -399,16 +410,8 @@
                                     <outletCollection property="gestureRecognizers" destination="5fY-9Q-rvi" appends="YES" id="eKb-22-Tse"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVJ-kG-EGT">
-                                <rect key="frame" x="24" y="37" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="jb2-Ub-Gcd" appends="YES" id="KhT-90-cRn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdh-QE-fpy">
-                                <rect key="frame" x="321" y="37" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdh-QE-fpy">
+                                <rect key="frame" x="315" y="43" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -423,11 +426,21 @@
                                     <action selector="heartMeme:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DGr-Wd-AT3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVJ-kG-EGT">
+                                <rect key="frame" x="30" y="43" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jb2-Ub-Gcd" appends="YES" id="KhT-90-cRn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98721050126903553" green="0.98721050126903553" blue="0.98721050126903553" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dDm-sO-G1A" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="AXh-kt-pgo"/>
                             <constraint firstItem="dDm-sO-G1A" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-40" id="bj8-eK-lTJ"/>
+                            <constraint firstItem="3Ws-V7-L4N" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="i67-wN-5aL"/>
+                            <constraint firstItem="3Ws-V7-L4N" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-275" id="k4b-AE-yFW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -464,7 +477,83 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-879" y="555"/>
+            <point key="canvasLocation" x="-1598" y="627"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="WXM-bA-tt5">
+            <objects>
+                <viewController id="bFc-Hr-cZb" customClass="AppLaunchView" customModule="MemeMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rQ9-ey-8dA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-Pd-UgP">
+                                <rect key="frame" x="0.0" y="370.5" width="375" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ0-Au-DCc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="J1t-j6-ezE" appends="YES" id="sze-ZN-efZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvn-jn-RFa">
+                                        <rect key="frame" x="0.0" y="33" width="375" height="33"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
+                                        <state key="normal" title="Sign In"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="zdG-pB-gBh" appends="YES" id="k6x-Ha-PA1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EwH-R0-ZIi">
+                                <rect key="frame" x="102" y="320" width="171.5" height="27.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meme Matcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xig-Yl-ddr">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Vitro-Bold" family="Vitro" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ML4-BS-YcJ">
+                                <rect key="frame" x="137" y="212" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ftj-Pd-UgP" firstAttribute="centerX" secondItem="rQ9-ey-8dA" secondAttribute="centerX" id="3RX-am-ugF"/>
+                            <constraint firstItem="Ftj-Pd-UgP" firstAttribute="centerY" secondItem="rQ9-ey-8dA" secondAttribute="centerY" constant="70" id="7DZ-WA-JVJ"/>
+                            <constraint firstItem="EwH-R0-ZIi" firstAttribute="centerX" secondItem="rQ9-ey-8dA" secondAttribute="centerX" id="RA9-Y2-jZz"/>
+                            <constraint firstItem="Aed-1r-VyF" firstAttribute="trailing" secondItem="Ftj-Pd-UgP" secondAttribute="trailing" id="WDS-Ic-pS4"/>
+                            <constraint firstItem="Ftj-Pd-UgP" firstAttribute="leading" secondItem="Aed-1r-VyF" secondAttribute="leading" id="vJD-gv-fIn"/>
+                            <constraint firstItem="EwH-R0-ZIi" firstAttribute="centerY" secondItem="rQ9-ey-8dA" secondAttribute="centerY" id="wzi-Al-Bt3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Aed-1r-VyF"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="eG4-ak-GNN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PeE-tU-li7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="J1t-j6-ezE">
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="show" id="eqC-Mh-yvN"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zdG-pB-gBh">
+                    <connections>
+                        <segue destination="ooC-Ll-4fA" kind="show" id="M34-jZ-l0Z"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2359.1999999999998" y="-1039.4302848575712"/>
         </scene>
         <!--Item-->
         <scene sceneID="aKh-aK-6py">
@@ -475,7 +564,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HmY-EB-Xel">
-                                <rect key="frame" x="0.0" y="236.5" width="375" height="194"/>
+                                <rect key="frame" x="0.0" y="277" width="375" height="113"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnU-ZW-ng9">
                                         <rect key="frame" x="152.5" y="0.0" width="70" height="29"/>
@@ -495,8 +584,25 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zLM-J4-EVp" firstAttribute="leading" secondItem="HmY-EB-Xel" secondAttribute="leading" constant="50" id="DiB-zG-bR7"/>
+                                    <constraint firstItem="8Mg-5I-Fhf" firstAttribute="leading" secondItem="HmY-EB-Xel" secondAttribute="leading" constant="50" id="V5h-d6-uxJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="zLM-J4-EVp" secondAttribute="trailing" constant="50" id="h0s-6c-Fkw"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Mg-5I-Fhf" secondAttribute="trailing" constant="50" id="lyV-c9-MAd"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkk-rm-WzG">
+                                <rect key="frame" x="113" y="48" width="150.5" height="21"/>
+                                <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.6588235294117647" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="PPs-tE-gn4">
+                                <rect key="frame" x="148.5" y="393.5" width="78" height="50"/>
+                                <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bln-Pd-doC">
-                                        <rect key="frame" x="162.5" y="125" width="50" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="33"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
                                         <state key="normal" title="Sign In"/>
@@ -505,7 +611,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsQ-hu-4og">
-                                        <rect key="frame" x="148.5" y="170" width="78" height="24"/>
+                                        <rect key="frame" x="0.0" y="26" width="78" height="24"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="10"/>
                                         <state key="normal" title="Need an account?">
@@ -516,26 +622,17 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="zLM-J4-EVp" firstAttribute="leading" secondItem="HmY-EB-Xel" secondAttribute="leading" constant="50" id="DiB-zG-bR7"/>
-                                    <constraint firstItem="8Mg-5I-Fhf" firstAttribute="leading" secondItem="HmY-EB-Xel" secondAttribute="leading" constant="50" id="V5h-d6-uxJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="zLM-J4-EVp" secondAttribute="trailing" constant="50" id="h0s-6c-Fkw"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Mg-5I-Fhf" secondAttribute="trailing" constant="50" id="lyV-c9-MAd"/>
-                                </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEME MATCHER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkk-rm-WzG">
-                                <rect key="frame" x="66" y="30" width="244" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Vitro-Medium" family="Vitro" pointSize="18"/>
-                                <color key="textColor" red="1" green="0.80784313730000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HmY-EB-Xel" firstAttribute="leading" secondItem="3Wi-e7-IIS" secondAttribute="leading" id="6Hx-yO-Sul"/>
                             <constraint firstItem="Xzt-UN-GXg" firstAttribute="trailing" secondItem="HmY-EB-Xel" secondAttribute="trailing" id="9rJ-Ty-eai"/>
+                            <constraint firstItem="PPs-tE-gn4" firstAttribute="centerY" secondItem="3Wi-e7-IIS" secondAttribute="centerY" constant="85" id="KEr-Q4-vXG"/>
+                            <constraint firstItem="mkk-rm-WzG" firstAttribute="centerX" secondItem="3Wi-e7-IIS" secondAttribute="centerX" id="bK3-jG-xPy"/>
+                            <constraint firstItem="mkk-rm-WzG" firstAttribute="centerY" secondItem="3Wi-e7-IIS" secondAttribute="centerY" constant="-275" id="d8Y-y1-SDQ"/>
                             <constraint firstItem="HmY-EB-Xel" firstAttribute="centerY" secondItem="3Wi-e7-IIS" secondAttribute="centerY" id="iFv-nv-XFQ"/>
+                            <constraint firstItem="PPs-tE-gn4" firstAttribute="centerX" secondItem="3Wi-e7-IIS" secondAttribute="centerX" id="tKh-QJ-zaq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xzt-UN-GXg"/>
                     </view>
@@ -558,28 +655,24 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-879" y="-200"/>
+            <point key="canvasLocation" x="-1572" y="-296"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="ooC-Ll-4fA" kind="relationship" relationship="viewControllers" id="ogc-Bd-AoV"/>
-                        <segue destination="L0k-N2-wWv" kind="relationship" relationship="viewControllers" id="oYs-DP-pHe"/>
-                        <segue destination="4a4-ph-uuD" kind="relationship" relationship="viewControllers" id="rJx-1G-IMT"/>
+                        <segue destination="bFc-Hr-cZb" kind="relationship" relationship="viewControllers" id="WW3-h2-nYj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2407" y="-200"/>
+            <point key="canvasLocation" x="-3132" y="-1039"/>
         </scene>
         <!--Item-->
         <scene sceneID="jKm-SW-b0V">
@@ -598,7 +691,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEC-yN-hJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2407" y="555"/>
+            <point key="canvasLocation" x="-3132" y="627"/>
         </scene>
     </scenes>
     <resources>
@@ -608,10 +701,9 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OnI-NI-SgA"/>
         <segue reference="XrI-LL-6XX"/>
         <segue reference="Xjg-bA-esp"/>
-        <segue reference="bpj-3x-Md2"/>
+        <segue reference="VD8-QX-R9Z"/>
         <segue reference="iI7-L5-ec4"/>
     </inferredMetricsTieBreakers>
 </document>

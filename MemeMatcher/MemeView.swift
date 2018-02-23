@@ -90,7 +90,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         userProfileButton.setImage(UIImage(named: "userProfile"), for: .normal)
         
         userChatButton.setImage(UIImage(named: "userChatButton"), for: .normal)
-        
+
         
         print(MemeMatcher.currentUser.username)
         
