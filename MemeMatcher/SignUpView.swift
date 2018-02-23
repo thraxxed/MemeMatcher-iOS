@@ -52,8 +52,6 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy")!)
         
-        signupNameTextField.borderStyle = .none
-        signupPasswordTextField.borderStyle = .none
     
         
         // CALCULATE LOCATION
