@@ -136,9 +136,9 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         switch (segue.identifier ?? "") {
         case "chatSegue":
             guard let selectedMatchCell = sender as? UserMatches else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
-            print(selectedMatchCell.userMatcherinos.text)
+            print(selectedMatchCell.userMatcherinos.text!)
         default:
             return
         }
