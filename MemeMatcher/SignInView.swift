@@ -19,6 +19,7 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy")!)
         
         // CALCULATE LOCATION
         locManager.requestWhenInUseAuthorization()

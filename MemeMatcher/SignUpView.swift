@@ -50,6 +50,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy")!)
+        
+        signupNameTextField.borderStyle = .none
+        signupPasswordTextField.borderStyle = .none
+    
+        
         // CALCULATE LOCATION
         locManager.requestWhenInUseAuthorization()
         locManager.requestAlwaysAuthorization()
@@ -67,6 +73,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         // END OF LOCATION STUFF
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

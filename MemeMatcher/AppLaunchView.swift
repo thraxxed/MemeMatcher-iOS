@@ -13,6 +13,7 @@ class AppLaunchView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy")!)
     }
 
     override func didReceiveMemoryWarning() {
