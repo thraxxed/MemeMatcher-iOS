@@ -228,7 +228,9 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func loadMemeImage() {
-        if (memeIndex >= self.memes.count-1) {
+        if (memeIndex >= self.memes.count - 1) {
+            self.memeImage.image = nil
+            self.memes = []
             return
         }
         memeIndex += 1
@@ -245,7 +247,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     //Mark: Actions
     
     @IBAction func viewMatches(_ sender: UITapGestureRecognizer) {
-        getMatches(for: 1) { (result) in
+        MemeMatcher.getMatches(for: 1) { (result) in
             switch result {
             case .success(let matches):
                 MemeMatcher.matches = matches
@@ -279,6 +281,9 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        if (memeIndex >= self.memes.count) {
+            return
+        }
         if (self.memes.count > 1) {
             print("we swiped right")
             sendLike(liked: true)
@@ -286,6 +291,9 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if (memeIndex >= self.memes.count) {
+            return
+        }
         if (self.memes.count > 1) {
             print("we swiped left")
             sendLike(liked: false)
@@ -294,6 +302,9 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func heartMeme(_ sender: UIButton) {
+        if (memeIndex >= self.memes.count) {
+            return
+        }
         if (self.memes.count > 1) {
             print("we clicked heart")
             sendLike(liked: true)
@@ -301,6 +312,9 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func dislikeMeme(_ sender: UIButton) {
+        if (memeIndex >= self.memes.count) {
+            return
+        }
         if (self.memes.count > 1) {
             print("we clicked x")
             sendLike(liked: false)
