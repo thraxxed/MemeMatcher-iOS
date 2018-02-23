@@ -8,6 +8,8 @@
 
 import UIKit
 
+var currentMatch = ""
+
 class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,7 +140,8 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
             guard let selectedMatchCell = sender as? UserMatches else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
             }
-            print(selectedMatchCell.userMatcherinos.text!)
+            MemeMatcher.currentMatch = selectedMatchCell.userMatcherinos.text!
+            print(MemeMatcher.currentMatch)
         default:
             return
         }
