@@ -137,10 +137,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-4g-HJs">
-                                <rect key="frame" x="-494.5" y="108.5" width="1364" height="450"/>
+                                <rect key="frame" x="-498.5" y="108.5" width="1372" height="450"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
-                                        <rect key="frame" x="562" y="0.0" width="240" height="240"/>
+                                        <rect key="frame" x="566" y="0.0" width="240" height="240"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Py2-Q9-KtS" secondAttribute="height" multiplier="1:1" id="CoZ-UT-JKx"/>
@@ -159,31 +159,31 @@
                                         </connections>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
-                                        <rect key="frame" x="10" y="248" width="1344" height="30"/>
+                                        <rect key="frame" x="10" y="248" width="1352" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-GS-ls5">
-                                        <rect key="frame" x="665.5" y="286" width="33" height="20.5"/>
+                                        <rect key="frame" x="669.5" y="286" width="33" height="20.5"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="18" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-8T-szJ">
-                                        <rect key="frame" x="51" y="314.5" width="1262" height="31"/>
+                                        <rect key="frame" x="51" y="314.5" width="1270" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="L0k-N2-wWv" eventType="valueChanged" id="5cA-XM-RaT"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-kq-LnM">
-                                        <rect key="frame" x="673" y="352.5" width="18.5" height="20.5"/>
+                                        <rect key="frame" x="677" y="352.5" width="18.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-JK-1DX">
-                                        <rect key="frame" x="622.5" y="381" width="119" height="34"/>
+                                        <rect key="frame" x="626.5" y="381" width="119" height="34"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-4N-LwM">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="34"/>
@@ -206,7 +206,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
-                                        <rect key="frame" x="645" y="423" width="74" height="27"/>
+                                        <rect key="frame" x="649" y="423" width="74" height="27"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="12"/>
                                         <state key="normal" title="Update Profile"/>
@@ -487,8 +487,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-Pd-UgP">
-                                <rect key="frame" x="0.0" y="370.5" width="375" height="66"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-Pd-UgP">
+                                <rect key="frame" x="0.0" y="351.5" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ0-Au-DCc">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
@@ -502,7 +502,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvn-jn-RFa">
-                                        <rect key="frame" x="0.0" y="33" width="375" height="33"/>
+                                        <rect key="frame" x="0.0" y="31" width="375" height="33"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
                                         <state key="normal" title="Sign In"/>
@@ -531,7 +531,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ftj-Pd-UgP" firstAttribute="centerX" secondItem="rQ9-ey-8dA" secondAttribute="centerX" id="3RX-am-ugF"/>
-                            <constraint firstItem="Ftj-Pd-UgP" firstAttribute="centerY" secondItem="rQ9-ey-8dA" secondAttribute="centerY" constant="70" id="7DZ-WA-JVJ"/>
+                            <constraint firstItem="Ftj-Pd-UgP" firstAttribute="centerY" secondItem="rQ9-ey-8dA" secondAttribute="centerY" constant="50" id="7DZ-WA-JVJ"/>
                             <constraint firstItem="EwH-R0-ZIi" firstAttribute="centerX" secondItem="rQ9-ey-8dA" secondAttribute="centerX" id="RA9-Y2-jZz"/>
                             <constraint firstItem="Aed-1r-VyF" firstAttribute="trailing" secondItem="Ftj-Pd-UgP" secondAttribute="trailing" id="WDS-Ic-pS4"/>
                             <constraint firstItem="Ftj-Pd-UgP" firstAttribute="leading" secondItem="Aed-1r-VyF" secondAttribute="leading" id="vJD-gv-fIn"/>
@@ -701,9 +701,9 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XrI-LL-6XX"/>
+        <segue reference="M34-jZ-l0Z"/>
         <segue reference="Xjg-bA-esp"/>
         <segue reference="VD8-QX-R9Z"/>
-        <segue reference="iI7-L5-ec4"/>
+        <segue reference="eqC-Mh-yvN"/>
     </inferredMetricsTieBreakers>
 </document>
