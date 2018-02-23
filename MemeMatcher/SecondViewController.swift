@@ -279,24 +279,32 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        print("we swiped right")
-        sendLike(liked: true)
+        if (self.memes.count > 0) {
+            print("we swiped right")
+            sendLike(liked: true)
+        }
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
-        print("we swiped left")
-        sendLike(liked: false)
+        if (self.memes.count > 0) {
+            print("we swiped left")
+            sendLike(liked: false)
+        }
     }
     
     
     @IBAction func heartMeme(_ sender: UIButton) {
-        print("we clicked heart")
-        sendLike(liked: true)
+        if (self.memes.count > 0) {
+            print("we clicked heart")
+            sendLike(liked: true)
+        }
     }
     
     @IBAction func dislikeMeme(_ sender: UIButton) {
-        print("we clicked x")
-        sendLike(liked: false)
+        if (self.memes.count > 0) {
+            print("we clicked x")
+            sendLike(liked: false)
+        }
     }
     
     // Functions to download images after API call
