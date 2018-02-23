@@ -13,10 +13,21 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
 //        print("we're in view did load")
         
-        
+        MemeMatcher.getMatches(for: 1) { (result) in
+            switch result {
+            case .success(let matches):
+                MemeMatcher.matches = matches
+                print(MemeMatcher.matches)
+            case .failure(let error):
+                print(error)
+                fatalError("error: \(error.localizedDescription)")
+            }
+        }
         
         print("zzz")
         print(MemeMatcher.matches)
+        
+
         
 //        let dummyMatch: Match = Match(id: -1, username: "ddd", bio: "", age: -1, picture_url: "")
         
