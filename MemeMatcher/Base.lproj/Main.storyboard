@@ -115,7 +115,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="764" y="44.527736131934034"/>
+            <point key="canvasLocation" x="-1615" y="-200"/>
         </scene>
         <!--Item-->
         <scene sceneID="Mj1-w9-Yoi">
@@ -126,10 +126,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rNe-4g-HJs">
-                                <rect key="frame" x="-314.5" y="108.5" width="1004" height="450"/>
+                                <rect key="frame" x="-368.5" y="108.5" width="1112" height="450"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="defaultImage" highlightedImage="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Q9-KtS">
-                                        <rect key="frame" x="382" y="0.0" width="240" height="240"/>
+                                        <rect key="frame" x="436" y="0.0" width="240" height="240"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Py2-Q9-KtS" secondAttribute="height" multiplier="1:1" id="CoZ-UT-JKx"/>
@@ -148,31 +148,31 @@
                                         </connections>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-2i-qCI">
-                                        <rect key="frame" x="10" y="248" width="984" height="30"/>
+                                        <rect key="frame" x="10" y="248" width="1092" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-GS-ls5">
-                                        <rect key="frame" x="485.5" y="286" width="33" height="20.5"/>
+                                        <rect key="frame" x="539.5" y="286" width="33" height="20.5"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="18" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-8T-szJ">
-                                        <rect key="frame" x="51" y="314.5" width="902" height="31"/>
+                                        <rect key="frame" x="51" y="314.5" width="1010" height="31"/>
                                         <connections>
                                             <action selector="sliderValueChanged:" destination="L0k-N2-wWv" eventType="valueChanged" id="5cA-XM-RaT"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-kq-LnM">
-                                        <rect key="frame" x="493" y="352.5" width="18.5" height="20.5"/>
+                                        <rect key="frame" x="547" y="352.5" width="18.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FcE-JK-1DX">
-                                        <rect key="frame" x="442.5" y="381" width="119" height="34"/>
+                                        <rect key="frame" x="496.5" y="381" width="119" height="34"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prP-4N-LwM">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="34"/>
@@ -195,7 +195,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-xn-HWP">
-                                        <rect key="frame" x="465" y="423" width="74" height="27"/>
+                                        <rect key="frame" x="519" y="423" width="74" height="27"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="12"/>
                                         <state key="normal" title="Update Profile"/>
@@ -260,7 +260,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-559.20000000000005" y="726.38680659670172"/>
+            <point key="canvasLocation" x="-1615" y="555"/>
         </scene>
         <!--Matches-->
         <scene sceneID="kXf-5n-pBH">
@@ -316,6 +316,7 @@
                                     <outlet property="userImagerino" destination="ahe-lN-5tu" id="aoN-N2-Pec"/>
                                     <outlet property="userMatcherinos" destination="jde-mM-Ud0" id="s2x-qj-yLi"/>
                                     <outlet property="userMatches" destination="qgy-qF-QjM" id="dBZ-Eq-AJK"/>
+                                    <segue destination="dfz-g7-Bnk" kind="show" id="nnu-m3-GSb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -337,7 +338,31 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwh-K5-HfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.8" y="1464.9175412293855"/>
+            <point key="canvasLocation" x="-129" y="555"/>
+        </scene>
+        <!--Chat View-->
+        <scene sceneID="sK4-cK-nYb">
+            <objects>
+                <viewController id="dfz-g7-Bnk" customClass="ChatView" customModule="MemeMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8hr-zJ-yyK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Aa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-I2-ydj">
+                                <rect key="frame" x="0.0" y="637" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8aF-rW-DrG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxg-Qr-KmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589.60000000000002" y="554.57271364317842"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -439,7 +464,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="879.20000000000005" y="1012.4437781109445"/>
+            <point key="canvasLocation" x="-879" y="555"/>
         </scene>
         <!--Item-->
         <scene sceneID="aKh-aK-6py">
@@ -533,7 +558,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1694" y="45"/>
+            <point key="canvasLocation" x="-879" y="-200"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -554,7 +579,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="45"/>
+            <point key="canvasLocation" x="-2407" y="-200"/>
         </scene>
         <!--Item-->
         <scene sceneID="jKm-SW-b0V">
@@ -573,7 +598,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEC-yN-hJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-726" y="1465"/>
+            <point key="canvasLocation" x="-2407" y="555"/>
         </scene>
     </scenes>
     <resources>
@@ -586,7 +611,7 @@
         <segue reference="OnI-NI-SgA"/>
         <segue reference="XrI-LL-6XX"/>
         <segue reference="Xjg-bA-esp"/>
-        <segue reference="VD8-QX-R9Z"/>
+        <segue reference="bpj-3x-Md2"/>
         <segue reference="iI7-L5-ec4"/>
     </inferredMetricsTieBreakers>
 </document>

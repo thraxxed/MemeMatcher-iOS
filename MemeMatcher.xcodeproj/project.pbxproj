@@ -46,6 +46,7 @@
 		F9C44EFF203B50F500BD2A02 /* VitroItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EFA203B50F500BD2A02 /* VitroItalic.ttf */; };
 		F9C44F00203B50F500BD2A02 /* VitroMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EFB203B50F500BD2A02 /* VitroMedium.ttf */; };
 		F9C44F01203B50F500BD2A02 /* VitroMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C44EFB203B50F500BD2A02 /* VitroMedium.ttf */; };
+		F9CD2C85203FD81B00ED62E3 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CD2C84203FD81B00ED62E3 /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		F9C44EF9203B50F500BD2A02 /* VitroBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VitroBold.ttf; sourceTree = "<group>"; };
 		F9C44EFA203B50F500BD2A02 /* VitroItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VitroItalic.ttf; sourceTree = "<group>"; };
 		F9C44EFB203B50F500BD2A02 /* VitroMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VitroMedium.ttf; sourceTree = "<group>"; };
+		F9CD2C84203FD81B00ED62E3 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +143,10 @@
 		5D35507E20391A0A00CC21F1 /* MemeMatcher */ = {
 			isa = PBXGroup;
 			children = (
+				5D35508520391A0A00CC21F1 /* Main.storyboard */,
 				5D35507F20391A0A00CC21F1 /* AppDelegate.swift */,
 				5D35508120391A0A00CC21F1 /* FirstViewController.swift */,
 				5D35508320391A0A00CC21F1 /* SecondViewController.swift */,
-				5D35508520391A0A00CC21F1 /* Main.storyboard */,
 				5D35508820391A0A00CC21F1 /* Assets.xcassets */,
 				5D35508A20391A0A00CC21F1 /* LaunchScreen.storyboard */,
 				5D35508D20391A0A00CC21F1 /* Info.plist */,
@@ -152,6 +154,7 @@
 				36295332203BACD5009C2E5D /* FourthViewController.swift */,
 				3655F386203E5C0B00CD26F0 /* UserMatches.swift */,
 				3655F388203E5E1F00CD26F0 /* UserMatchTableViewController.swift */,
+				F9CD2C84203FD81B00ED62E3 /* ChatView.swift */,
 			);
 			path = MemeMatcher;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				5D35508420391A0A00CC21F1 /* SecondViewController.swift in Sources */,
 				5D35508020391A0A00CC21F1 /* AppDelegate.swift in Sources */,
 				F904865C203A5C3B00FCA1BB /* ThirdViewController.swift in Sources */,
+				F9CD2C85203FD81B00ED62E3 /* ChatView.swift in Sources */,
 				3655F389203E5E1F00CD26F0 /* UserMatchTableViewController.swift in Sources */,
 				5D35508220391A0A00CC21F1 /* FirstViewController.swift in Sources */,
 				36295333203BACD5009C2E5D /* FourthViewController.swift in Sources */,
