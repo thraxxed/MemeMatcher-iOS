@@ -279,14 +279,14 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        if (self.memes.count > 0) {
+        if (self.memes.count > 1) {
             print("we swiped right")
             sendLike(liked: true)
         }
     }
     
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
-        if (self.memes.count > 0) {
+        if (self.memes.count > 1) {
             print("we swiped left")
             sendLike(liked: false)
         }
@@ -294,14 +294,14 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func heartMeme(_ sender: UIButton) {
-        if (self.memes.count > 0) {
+        if (self.memes.count > 1) {
             print("we clicked heart")
             sendLike(liked: true)
         }
     }
     
     @IBAction func dislikeMeme(_ sender: UIButton) {
-        if (self.memes.count > 0) {
+        if (self.memes.count > 1) {
             print("we clicked x")
             sendLike(liked: false)
         }
