@@ -28,12 +28,22 @@ class ChatView: UIViewController {
             switch result {
             case .success(let messages):
                 self.messages = messages
+                var yOffset = 0
+                for message in self.messages {
+                    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+                    label.center = CGPoint(x: 160, y: 285 + yOffset)
+                    label.textAlignment = .left
+                    label.text = message.body
+                    self.view.addSubview(label)
+                    yOffset += 30
+                }
                 print(self.messages)
             case .failure(let error):
                 print(error )
                 fatalError("error: \(error.localizedDescription)")
             }
         }
+        
         
 
         // Do any additional setup after loading the view.
@@ -64,6 +74,7 @@ class ChatView: UIViewController {
             self.id = id
         }
     }
+    
     
     func getMessages(for id: Int, completion: ((Result<[Message]>) -> Void)?) {
         var urlComponents = URLComponents()
