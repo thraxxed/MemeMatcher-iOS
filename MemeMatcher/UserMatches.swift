@@ -12,6 +12,9 @@ class UserMatches: UITableViewCell {
     
     //MARK: Properties
     
+    
+    @IBOutlet weak var matchId: UILabel!
+    
     @IBOutlet weak var userMatcherinos: UILabel!
     @IBOutlet weak var userMatches: UIView!
     

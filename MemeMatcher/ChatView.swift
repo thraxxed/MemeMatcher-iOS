@@ -15,9 +15,6 @@ class ChatView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print("hey")
-//        print(MemeMatcher.currentMatch)
-        
         // Fetch messages
         getMessages(for: 1) { (result) in
             switch result {
@@ -56,7 +53,11 @@ class ChatView: UIViewController {
         urlComponents.host = "meme-matcher.herokuapp.com"
         urlComponents.path = "/api/messages"
         
+        urlComponents.queryItems = [URLQueryItem(name: "id", value: "\(MemeMatcher.currentMatch)")]
+        
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+        
+        
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

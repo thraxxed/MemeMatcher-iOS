@@ -111,6 +111,7 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         
         let match = MemeMatcher.matches[indexPath.row]
         print("we're in the cellidntifier function")
+        cell.matchId.text = String(match.id)
         cell.userMatcherinos.text = match.username
         cell.userAgerino.text = String(match.age)
         if (matchIndex >= matches.count-1) {
@@ -140,7 +141,7 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
             guard let selectedMatchCell = sender as? UserMatches else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
             }
-            MemeMatcher.currentMatch = selectedMatchCell.userMatcherinos.text!
+            MemeMatcher.currentMatch = selectedMatchCell.matchId.text!
             print(MemeMatcher.currentMatch)
         default:
             return
