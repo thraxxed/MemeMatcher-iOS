@@ -8,10 +8,18 @@
 
 import UIKit
 
+
+
 class ChatView: UIViewController {
     
+    
     var messages = [Message]()
-
+    
+    //MARK: Properties
+    
+    @IBOutlet weak var sendChatButton: UIButton!
+    
+    @IBOutlet weak var messageInputField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,6 +92,11 @@ class ChatView: UIViewController {
         }
         
         task.resume()
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func postMessage(_ sender: UITapGestureRecognizer) {
     }
     
 
