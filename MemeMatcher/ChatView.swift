@@ -57,8 +57,10 @@ class ChatView: UIViewController {
     
     struct formMessage: Codable {
         let body: String
-        init(body: String) {
+        let id: String
+        init(body: String, id: String) {
             self.body = body
+            self.id = id
         }
     }
     
@@ -109,7 +111,10 @@ class ChatView: UIViewController {
             print("did not post message because input was empty")
             return
         }
-        sendPostMessage(message: formMessage(body: messageInputField.text!)) { (error) in
+        
+        let fm = formMessage(body: messageInputField.text!,
+                             id: MemeMatcher.currentMatch)
+        sendPostMessage(message: fm) { (error) in
             if let error = error {
                 fatalError(error.localizedDescription)
             }
