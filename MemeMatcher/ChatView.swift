@@ -46,8 +46,9 @@ class ChatView: UIViewController {
     
     struct Message: Codable {
         let id: Int
-        let author_id: Int
-        let receiver_id: Int
+        let user1_id: Int
+        let user2_id: Int
+        let body: String
     }
     
     enum Result<Value> {
@@ -119,6 +120,8 @@ class ChatView: UIViewController {
                 fatalError(error.localizedDescription)
             }
         }
+        
+        messageInputField.text = ""
     }
     
     func sendPostMessage(message: formMessage, completion:((Error?) -> Void)?){
