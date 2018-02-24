@@ -11,7 +11,7 @@ import UIKit
 struct Match: Codable {
     let id: Int
     let username: String
-    let bio: String
+    let bio: String 
     let age: Int
     let picture_url: String
 }
