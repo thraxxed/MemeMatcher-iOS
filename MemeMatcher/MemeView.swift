@@ -92,14 +92,13 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         userChatButton.setImage(UIImage(named: "userChatButton"), for: .normal)
 
         
-        print(MemeMatcher.currentUser.username)
+        
         
         // Do any additional setup after loading the view, typically from a nib.
         getMemes(for: 1) { (result) in
             switch result {
             case .success(let memes):
                 self.memes = memes
-                print(self.memes)
                 if (memes.count > 0) {
                     let url = URL(string: self.memes[self.memeIndex].image_url)
                     
@@ -112,7 +111,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
 
             case .failure(let error):
-                print(error )
                 fatalError("error: \(error.localizedDescription)")
             }
         }
@@ -189,7 +187,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func likeMeme(like: Like, completion:((Error?) -> Void)?){
         if (memeIndex == self.memes.count) {
-            print("sorry, your out of memes")
             return
         }
         var urlComponents = URLComponents()
@@ -210,7 +207,7 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         do {
             let jsonData = try encoder.encode(like)
             request.httpBody = jsonData
-            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
             completion?(error)
         }
@@ -251,12 +248,10 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
             switch result {
             case .success(let matches):
                 MemeMatcher.matches = matches
-                print(MemeMatcher.matches)
                 DispatchQueue.main.async(){
                     self.performSegue(withIdentifier: "viewMatches", sender: self)
                 }
             case .failure(let error):
-                print(error)
                 fatalError("error: \(error.localizedDescription)")
             }
         }
@@ -285,7 +280,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         if (self.memes.count > 1) {
-            print("we swiped right")
             sendLike(liked: true)
         }
     }
@@ -295,7 +289,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         if (self.memes.count > 1) {
-            print("we swiped left")
             sendLike(liked: false)
         }
     }
@@ -306,7 +299,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         if (self.memes.count > 1) {
-            print("we clicked heart")
             sendLike(liked: true)
         }
     }
@@ -316,7 +308,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         if (self.memes.count > 1) {
-            print("we clicked x")
             sendLike(liked: false)
         }
     }
@@ -329,11 +320,11 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func downloadImage(url: URL) {
-        print("Download Started")
+//        print("Download Started")
         getDataFromUrl(url: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
+//            print(response?.suggestedFilename ?? url.lastPathComponent)
+//            print("Download Finished")
             DispatchQueue.main.async() {
                 self.memeImage.image = UIImage(data: data)
             }

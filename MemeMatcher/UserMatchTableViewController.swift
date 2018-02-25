@@ -18,16 +18,10 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
             switch result {
             case .success(let matches):
                 MemeMatcher.matches = matches
-                print(MemeMatcher.matches)
             case .failure(let error):
-                print(error)
                 fatalError("error: \(error.localizedDescription)")
             }
         }
-        
-        print("zzz")
-        print(MemeMatcher.matches)
-        
     }
     
     struct User: Codable {
@@ -84,22 +78,16 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print("yo")
-        print(matches.count)
         return matches.count
-//        return 1
     }
     
     let cellIdentifier = "UserMatches"
@@ -110,7 +98,6 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
         }
         
         let match = MemeMatcher.matches[indexPath.row]
-        print("we're in the cellidntifier function")
         cell.matchId.text = String(match.id)
         cell.userMatcherinos.text = match.username
         cell.userAgerino.text = String(match.age)
@@ -118,9 +105,8 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
             return cell
         }
         
-        let shit = "https:" + matches[matchIndex].picture_url
-        print(shit)
-        let url = URL(string: shit)
+        let adjustedUrl = "https:" + matches[matchIndex].picture_url
+        let url = URL(string: adjustedUrl)
         matchIndex += 1
 
         
@@ -142,7 +128,6 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
                 fatalError("Unexpected sender: \(String(describing: sender))")
             }
             MemeMatcher.currentMatch = selectedMatchCell.matchId.text!
-            print(MemeMatcher.currentMatch)
         default:
             return
         }

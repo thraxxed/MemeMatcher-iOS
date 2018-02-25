@@ -67,9 +67,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         MemeMatcher.longitude = currentLocation.coordinate.longitude
         MemeMatcher.latitude = currentLocation.coordinate.latitude
         
-        print("hey!")
-        print(MemeMatcher.longitude)
-        print(MemeMatcher.latitude)
         
         // END OF LOCATION STUFF
     }
@@ -117,7 +114,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         do {
             let jsonData = try encoder.encode(user)
             request.httpBody = jsonData
-            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
             completion?(error)
         }
@@ -133,7 +130,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
             
             // APIs usually respond with the data you just sent in your POST request
             if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-                print("response: ", utf8Representation)
+//                print("response: ", utf8Representation)
                 
                 let currentUserJSON = try? JSONSerialization.jsonObject(with: data)
                 if ((currentUserJSON! as AnyObject)["username"] == nil) {
@@ -162,9 +159,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
                     switch result {
                     case .success(let matches):
                         MemeMatcher.matches = matches
-                        print(MemeMatcher.matches)
                     case .failure(let error):
-                        print(error)
+                        
                         fatalError("error: \(error.localizedDescription)")
                     }
                 }

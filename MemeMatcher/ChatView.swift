@@ -18,7 +18,6 @@ class ChatView: UIViewController, UITextFieldDelegate {
     
     @objc func fetchMessages() {
         for view in self.view.subviews{
-            print(type(of: view))
             if(String(describing: type(of: view)) == "UILabel") {
                 view.removeFromSuperview()
             }
@@ -40,9 +39,7 @@ class ChatView: UIViewController, UITextFieldDelegate {
                     self.view.addSubview(label)
                     yOffset += 30
                 }
-                print(self.messages)
             case .failure(let error):
-                print(error)
                 fatalError("error: \(error.localizedDescription)")
             }
         }
@@ -61,32 +58,7 @@ class ChatView: UIViewController, UITextFieldDelegate {
         
         // Fetch messages
         fetchMessages()
-//        getMessages(for: 1) { (result) in
-//            switch result {
-//            case .success(let messages):
-//                self.messages = messages
-//                var yOffset = 0
-//                for message in self.messages {
-//                    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//                    label.center = CGPoint(x: 160, y: 80 + yOffset)
-//                    if (message.author_id == MemeMatcher.currentUser.id) {
-//                        label.textAlignment = .right
-//                    } else {
-//                        label.textAlignment = .left
-//                    }
-//                    label.text = message.body
-//                    self.view.addSubview(label)
-//                    yOffset += 30
-//                }
-//                print(self.messages)
-//            case .failure(let error):
-//                print(error)
-//                fatalError("error: \(error.localizedDescription)")
-//            }
-//        }
         
-        
-
         // Do any additional setup after loading the view.
     }
     
@@ -165,9 +137,7 @@ class ChatView: UIViewController, UITextFieldDelegate {
     //MARK: Actions
     
     @IBAction func postMessage(_ sender: UITapGestureRecognizer) {
-        print(messageInputField.text!)
         if (messageInputField.text == "") {
-            print("did not post message because input was empty")
             return
         }
         
@@ -204,7 +174,7 @@ class ChatView: UIViewController, UITextFieldDelegate {
         do {
             let jsonData = try encoder.encode(message)
             request.httpBody = jsonData
-            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
             completion?(error)
         }

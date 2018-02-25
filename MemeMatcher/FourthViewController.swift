@@ -113,7 +113,7 @@ class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         do {
             let jsonData = try encoder.encode(editUser)
             request.httpBody = jsonData
-            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
             completion?(error)
         }
