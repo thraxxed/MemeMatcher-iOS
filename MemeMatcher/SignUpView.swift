@@ -56,7 +56,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         
     
         
-        // CALCULATE LOCATION
+        // Calculate Location
         locManager.requestWhenInUseAuthorization()
         locManager.requestAlwaysAuthorization()
         
@@ -67,8 +67,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         MemeMatcher.longitude = currentLocation.coordinate.longitude
         MemeMatcher.latitude = currentLocation.coordinate.latitude
         
-        
-        // END OF LOCATION STUFF
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
@@ -130,7 +128,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
             
             // APIs usually respond with the data you just sent in your POST request
             if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-//                print("response: ", utf8Representation)
                 
                 let currentUserJSON = try? JSONSerialization.jsonObject(with: data)
                 if ((currentUserJSON! as AnyObject)["username"] == nil) {
@@ -152,8 +149,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationMana
                 
                 MemeMatcher.currentUser = MemeMatcher.User(id: id2, username: username2, picture_url: picture_url2,
                                                            latitude: MemeMatcher.latitude, longitude: MemeMatcher.longitude,
-                                                           age: age2,
-                                                           gender: gender2, bio: bio2)
+                                                           age: age2, gender: gender2, bio: bio2)
                 
                 getMatches(for: 1) { (result) in
                     switch result {

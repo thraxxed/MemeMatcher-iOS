@@ -72,7 +72,6 @@ class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
@@ -82,7 +81,6 @@ class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         let imageData:Data = UIImagePNGRepresentation(photoImageView.image!)!
         imageStr = imageData.base64EncodedString()
-        
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
@@ -113,7 +111,6 @@ class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         do {
             let jsonData = try encoder.encode(editUser)
             request.httpBody = jsonData
-//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
             completion?(error)
         }

@@ -105,8 +105,6 @@ class ChatView: UIViewController, UITextFieldDelegate {
         
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
-        
-        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -174,7 +172,6 @@ class ChatView: UIViewController, UITextFieldDelegate {
         do {
             let jsonData = try encoder.encode(message)
             request.httpBody = jsonData
-//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
             completion?(error)
         }
