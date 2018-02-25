@@ -12,18 +12,11 @@ import UIKit
 
 class ChatView: UIViewController {
     
+
     
     var messages = [Message]()
     
-    //MARK: Properties
-    
-    @IBOutlet weak var sendChatButton: UIButton!
-    
-    @IBOutlet weak var messageInputField: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Fetch messages
+    @objc func fetchMessages() {
         getMessages(for: 1) { (result) in
             switch result {
             case .success(let messages):
@@ -47,6 +40,43 @@ class ChatView: UIViewController {
                 fatalError("error: \(error.localizedDescription)")
             }
         }
+    }
+    
+    //MARK: Properties
+    
+    @IBOutlet weak var sendChatButton: UIButton!
+    
+    @IBOutlet weak var messageInputField: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var messageFetchTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(fetchMessages), userInfo: nil, repeats: true)
+        
+        // Fetch messages
+        fetchMessages()
+//        getMessages(for: 1) { (result) in
+//            switch result {
+//            case .success(let messages):
+//                self.messages = messages
+//                var yOffset = 0
+//                for message in self.messages {
+//                    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//                    label.center = CGPoint(x: 160, y: 80 + yOffset)
+//                    if (message.author_id == MemeMatcher.currentUser.id) {
+//                        label.textAlignment = .right
+//                    } else {
+//                        label.textAlignment = .left
+//                    }
+//                    label.text = message.body
+//                    self.view.addSubview(label)
+//                    yOffset += 30
+//                }
+//                print(self.messages)
+//            case .failure(let error):
+//                print(error)
+//                fatalError("error: \(error.localizedDescription)")
+//            }
+//        }
         
         
 
