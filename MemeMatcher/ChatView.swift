@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ChatView: UIViewController {
+class ChatView: UIViewController, UITextFieldDelegate {
     
 
     
@@ -55,6 +55,7 @@ class ChatView: UIViewController {
     @IBOutlet weak var messageInputField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageInputField.delegate = self
         
         _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(fetchMessages), userInfo: nil, repeats: true)
         
@@ -87,6 +88,11 @@ class ChatView: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        messageInputField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
