@@ -36,7 +36,7 @@ var latitude: Double = -1
 let nullUser: User = User(id: -1, username: "NULL_USER", picture_url: "", latitude: -1, longitude: -1, age: -1, gender: "F", bio: "D")
 var currentUser: User = nullUser
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
 
     //MARK: Properties
     
@@ -48,7 +48,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        signupNameTextField.delegate = self
+        signupPasswordTextField.delegate = self
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy")!)
         
@@ -70,6 +72,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         print(MemeMatcher.latitude)
         
         // END OF LOCATION STUFF
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        signupNameTextField.resignFirstResponder()
+        signupPasswordTextField.resignFirstResponder()
+        return true
     }
     
 

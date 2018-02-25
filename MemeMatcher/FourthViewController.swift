@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class FourthViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK Properties:
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var submitUpdate: UIButton!
@@ -26,6 +26,7 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userBioField.delegate = self
         
         ageSlider.value = Float(MemeMatcher.currentUser.age)
         ageLabel.text = "\(Int(ageSlider.value))"
@@ -44,6 +45,11 @@ class FourthViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        userBioField.resignFirstResponder()
+        return true
     }
     
     struct EditUser: Codable {

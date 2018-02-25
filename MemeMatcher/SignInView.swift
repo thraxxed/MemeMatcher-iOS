@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ThirdViewController: UIViewController, CLLocationManagerDelegate {
+class ThirdViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var signinNameTextField: UITextField!
@@ -19,6 +19,8 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signinNameTextField.delegate = self
+        signinPasswordTextField.delegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy")!)
         
         // CALCULATE LOCATION
@@ -33,6 +35,12 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         MemeMatcher.latitude = currentLocation.coordinate.latitude
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        signinNameTextField.resignFirstResponder()
+        signinPasswordTextField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
