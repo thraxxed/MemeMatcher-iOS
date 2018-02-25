@@ -24,14 +24,16 @@ class ChatView: UIViewController, UITextFieldDelegate {
                     if(String(describing: type(of: view)) == "UILabel") {
                         print(view as! UILabel)
                         let label = view as! UILabel
-                        let message = self.messages[i]
-                        label.text = message.body
-                        if (message.author_id == MemeMatcher.currentUser.id) {
-                            label.textAlignment = .right
-                        } else {
-                            label.textAlignment = .left
+                        if (self.messages.count > i) {
+                            let message = self.messages[i]
+                            label.text = message.body
+                            if (message.author_id == MemeMatcher.currentUser.id) {
+                                label.textAlignment = .right
+                            } else {
+                                label.textAlignment = .left
+                            }
+                            i += 1
                         }
-                        i += 1
                     }
                 }
             case .failure(let error):
