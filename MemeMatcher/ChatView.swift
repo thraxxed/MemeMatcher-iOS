@@ -22,7 +22,6 @@ class ChatView: UIViewController, UITextFieldDelegate {
                 var i = 0
                 for view in self.view.subviews{
                     if(String(describing: type(of: view)) == "UILabel") {
-                        print(view as! UILabel)
                         let label = view as! UILabel
                         if (self.messages.count > i) {
                             let message = self.messages[i]
