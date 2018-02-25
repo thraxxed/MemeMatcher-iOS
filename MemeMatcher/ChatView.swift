@@ -31,8 +31,12 @@ class ChatView: UIViewController {
                 var yOffset = 0
                 for message in self.messages {
                     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-                    label.center = CGPoint(x: 160, y: 285 + yOffset)
-                    label.textAlignment = .left
+                    label.center = CGPoint(x: 160, y: 80 + yOffset)
+                    if (message.author_id == MemeMatcher.currentUser.id) {
+                        label.textAlignment = .right
+                    } else {
+                        label.textAlignment = .left
+                    }
                     label.text = message.body
                     self.view.addSubview(label)
                     yOffset += 30
@@ -59,6 +63,7 @@ class ChatView: UIViewController {
         let user1_id: Int
         let user2_id: Int
         let body: String
+        let author_id: Int
     }
     
     enum Result<Value> {
