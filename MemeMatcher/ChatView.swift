@@ -12,32 +12,27 @@ import UIKit
 
 class ChatView: UIViewController, UITextFieldDelegate {
     
-
-    
     var messages = [Message]()
     
     @objc func fetchMessages() {
-        for view in self.view.subviews{
-            if(String(describing: type(of: view)) == "UILabel") {
-                view.removeFromSuperview()
-            }
-        }
         getMessages(for: 1) { (result) in
             switch result {
             case .success(let messages):
                 self.messages = messages
-                var yOffset = 0
-                for message in self.messages {
-                    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-                    label.center = CGPoint(x: 160, y: 80 + yOffset)
-                    if (message.author_id == MemeMatcher.currentUser.id) {
-                        label.textAlignment = .right
-                    } else {
-                        label.textAlignment = .left
+                var i = 0
+                for view in self.view.subviews{
+                    if(String(describing: type(of: view)) == "UILabel") {
+                        print(view as! UILabel)
+                        let label = view as! UILabel
+                        let message = self.messages[i]
+                        label.text = message.body
+                        if (message.author_id == MemeMatcher.currentUser.id) {
+                            label.textAlignment = .right
+                        } else {
+                            label.textAlignment = .left
+                        }
+                        i += 1
                     }
-                    label.text = message.body
-                    self.view.addSubview(label)
-                    yOffset += 30
                 }
             case .failure(let error):
                 fatalError("error: \(error.localizedDescription)")
@@ -60,6 +55,14 @@ class ChatView: UIViewController, UITextFieldDelegate {
         fetchMessages()
         
         // Do any additional setup after loading the view.
+        
+        // Draw the UILabels where chat messages will be displayed
+        for i in 1...12 {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+            label.center = CGPoint(x: 160, y: 80 + (i-1)*30)
+            label.text = ""
+            self.view.addSubview(label)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method

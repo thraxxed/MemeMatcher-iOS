@@ -36,7 +36,6 @@ class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         userBioField.text = MemeMatcher.currentUser.bio
         ageSlider.value = Float(MemeMatcher.currentUser.age)
         ageLabel.text = "\(Int(ageSlider.value))"

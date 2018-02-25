@@ -92,8 +92,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         userChatButton.setImage(UIImage(named: "userChatButton"), for: .normal)
 
         
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
         getMemes(for: 1) { (result) in
             switch result {
@@ -207,7 +205,6 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
         do {
             let jsonData = try encoder.encode(like)
             request.httpBody = jsonData
-//            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         } catch {
             completion?(error)
         }
@@ -320,11 +317,8 @@ class SecondViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func downloadImage(url: URL) {
-//        print("Download Started")
         getDataFromUrl(url: url) { data, response, error in
             guard let data = data, error == nil else { return }
-//            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            print("Download Finished")
             DispatchQueue.main.async() {
                 self.memeImage.image = UIImage(data: data)
             }
