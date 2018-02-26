@@ -18,6 +18,8 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
             switch result {
             case .success(let matches):
                 MemeMatcher.matches = matches
+                print("got matches")
+                self.tableView.reloadData()
             case .failure(let error):
                 fatalError("error: \(error.localizedDescription)")
             }
