@@ -14,6 +14,8 @@ class UserMatchTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.separatorColor = .clear
+        
         MemeMatcher.getMatches(for: 1) { (result) in
             switch result {
             case .success(let matches):

@@ -16,6 +16,7 @@ class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var submitUpdate: UIButton!
     @IBOutlet weak var userBioField: UITextField!
     @IBOutlet weak var userGenderMale: UIStackView!
+    @IBOutlet weak var userMale: UIButton!
     
     @IBOutlet weak var userGenderFemale: UIButton!
     
@@ -26,6 +27,10 @@ class FourthViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userMale.isSelected = !userMale.isSelected
+        userGenderFemale.isSelected = !userGenderFemale.isSelected
+        
         userBioField.delegate = self
         
         ageSlider.value = Float(MemeMatcher.currentUser.age)
