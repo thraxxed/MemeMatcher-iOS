@@ -49,6 +49,9 @@ class ChatView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var messageInputField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sendChatButton.setImage(UIImage(named: "send"), for: .normal)
+        
         messageInputField.delegate = self
         
         _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(fetchMessages), userInfo: nil, repeats: true)
